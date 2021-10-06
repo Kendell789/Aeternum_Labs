@@ -1,3 +1,5 @@
+//Eternum Labs
+
 var cooksNeeded = (20,20,15) 
     //(lightRations,lightRations,Light Ration)                  //20 // energizing ligt rations 15//energizing travel ration 20 //Light ration 5//energizing travel ration
 var weaversNeeded = ((40), 20) 
