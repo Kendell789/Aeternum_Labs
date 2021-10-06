@@ -155,7 +155,7 @@ function suppliesNeeded(){
     //Toughened Crude Iron Armor
     var sOTCIA = 1
     //Hardened Crude Iron Armor
-    var sOHCIA = 1                      // -add
+    var sOHCIA = 1                      
     //Plundering Iron Armanets
     var pIA = 2
 }
@@ -166,9 +166,9 @@ function weaponSmithing(){
     //Reaving Iron Armaments
     var rIA = 1
     //Bulwark Crude Iron Armaments
-    var bulCIA=2                              //- add
+    var bulCIA=2                              
     //Bruising Crude Iron Armametns
-    var bruCIA = 1                           //-add
+    var bruCIA = 1                           
 }
 */
 function hunt(){
@@ -182,25 +182,23 @@ function hunt(){
     return (selected,amount);
 }
 //Impaling Iron Armaments
-var iIA = 0
+var iIA = 1
 //Reaving Iron Armaments
-var rIA = 0
+var rIA = 1
 //Bulwark Crude Iron Armaments
-var bulCIA = 0                              
+var bulCIA = 2                              
 //Bruising Crude Iron Armaments
-var bruCIA = 0                           //-add
+var bruCIA = 1                           
 //Toughened Crude Iron Armor
-var sOTCIA = 0
+var sOTCIA = 1
 //Hardened Crude Iron Armor
 var sOHCIA = 1                      
 //Plundering Iron Armanets
-var pIA = 0
+var pIA = 2
+// Crushiung Iron Armaents
+var cIA = 1
 
-var sOICIA =  0
-var sORCIA = 0
-var bIA = 0
-var cIA = 0
-var cCIA = 0
+
 
 //------------------
 //COST LOGIC
@@ -209,45 +207,57 @@ var cCIA = 0
 
 var eLRations = 0
 var eTRations = 0
-var lRations = 0
+var lRations = 55
 //---------------
-var silk = 0
+var silk = 40
+var sateen = 20
 //---------------
 //-----------------
-var iIngot = 0 
+var iIngot = 0 + (rIA * 9) + (pIA * 6) + (iIA *4) + (cIA*5)
 //--------------------
-var cLeather = 0 
+var cLeather = 0 + (rIA * 24) + (pIA*7) + (iIA * 12) + (cIA * 8)
 //------------------
 //------------------
 var lumber = 0
+var timber = 180 + (rIA * 7) + (pIA *7) + (iIA*4) + (cIA*12)
 //------------
 var sBlock = 0
-var sBrick = 0
+var sBrick = 25
 ///------------
 var wLBait = 0  // VVV
 var nCBait = 0  // VVV
 //------------------------
+// common mana potion
 var cMPot = 0
+// weak mana potion
 var wMPot = 0
+//common regeneration potion
+var cRPot = 20
+//Strong Health Potion
+var sHPot = 2
+//strong Mana Potion
+var sMPot = 2
+//Powerful Regeneration Potion
+var pRPot=1
 //------------------------
 
-
-var fiber = 0 + (sOHCIA * 15) 
-var rawHide = 0 + (sOHCIA * 15)
-var timber = 0 
+//--------------BASE---------------
+var fiber = 100 + (sOHCIA * 15) + (sOTCIA * 12)
+var rawHide = 150 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10)
 var stone = 0
-var gWood = 0
+var gWood = 950 + (bulCIA * 3) + (bruCIA * 20)
+var agedWood = 200
 var linen = 0
-var iOre = 0 + (sOHCIA * 20)
-var water = 0
-
+var iOre = 0 + (sOHCIA * 20) + (bulCIA *15) + (sOTCIA * 9) + (bruCIA * 20)
+var water = 100
+var oil = 40
 var t1RF = (1 * eLRations) + (1 * lRations)
 var t2RF = 1* eTRations
 var rF = 1*eTRations
 
 
-
-var sateen_c = 2 * silk 
+var silk_c = silk
+var sateen_c = 2 * silk_c + sateen
 var linen_c = 4 * sateen_c + linen
 var cWFlux_c = 1* silk + 1 * linen_c
 var silkThread_c = 6 * silk
@@ -259,11 +269,12 @@ var iIngot_c = iIngot
 var iOre_c = iIngot_c * 4 + iOre 
 
 var timber_c = lumber * 2 + timber
-var agedWood_Base = lumber * 4
+var agedWood_c = lumber * 4 + agedWood
 var cSFluxL = lumber * 1
 var gWood_c = timber_c * 4 + gWood
 
-var sBlock_c = sBrick * 4 + sBlock
+var sBrick_c = sBrick
+var sBlock_c = sBrick_c * 4 + sBlock
 var cSFluxS = sBrick * 1
 var stone_c = sBlock_c * 4 + stone
 
@@ -279,7 +290,7 @@ var water_c = wMPot *1 + cMPot *1 + water
 
 
 
-
+var agedWood_Base = agedWood_c
 var gWood_Base = gWood_c 
 var fibers_Base = fibers_c 
 var rawHide_Base = rawHide_c 
@@ -318,7 +329,7 @@ console.log("Stones  " + stone_Base)
 console.log("Coarse sandpaper Flux  " + cSFluxS)
 console.log("Craft into  " + sBlock_c + " Stone Blocks ")
 console.log("Craft into  " + sBrick + " Stone Bricks  ")
-
+console.log("Oil " + oil )
 
 //TODO::
 console.log("Water  " + water_Base)
