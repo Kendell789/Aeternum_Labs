@@ -1,7 +1,7 @@
 //Eternum Labs
 //---------------------------------------------------------------
 
-if (userclick === cooksNeeded){
+/*if (userclick === cooksNeeded){
     cooksNeeded()
 } else if(userclick === weaversNeeded){
      weaversNeeded()
@@ -30,37 +30,37 @@ if (userclick === cooksNeeded){
 } else if(userclick === hunt){
     hunt()
 }
-
+*/
 function cooksNeeded(){
     print ("What type or Food do you need to Cook")
     display ('lightRations', 'energizing', 'light rations', 'energizing travel rations')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0 //whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (10,15,20)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0 //whatever the user selected
     return (selected,amount);
 }
 
 function weaversNeeded(){
     print ("What are you weaving")    
     display ('silk', 'Sateen')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (15,20,25,40)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
 function fisherFolkNeeded(){
     print ("What kind of bait are you looking for ")    
     display ('NightcrawlerBait', 'WoodlouseBait')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (5,20)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
@@ -70,7 +70,7 @@ function huntersNeeded(){
     print("How many do you need")
     display (150)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
@@ -81,18 +81,18 @@ function metalWorkersNeeded(){
     print("How many do you need")
     display (90)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
 function alchemistsNeeded(){
     print ("What kind of potions do you need")
     display ('Lumber','Timber')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (1,2,10,15, 20)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
@@ -102,55 +102,55 @@ function harvestersNeeded(){
     print("How many do you need")
     display (50,100,150)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
 function carpentersNeeded(){
     print ("What kind of wood do you need")
     display ('Lumber','Timber')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (25,90)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
 function stoneMasonNeeded(){
     print ("What kind of stone do you need")
     display ('Stone bricks','Stone blocks')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (25,40,50)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
 
 function lumberJacksNeeded(){
     print ("What type of wood do you need")
     display ('green wood','aged wood')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (150,200,250,300)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount =0 //whatever the user selected
     return (selected,amount);
 }
 
 function suppliesNeeded(){
     print ("What type of supplies do you need ")
     display ('oil','water')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (40,100)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount =0 //whatever the user selected
     return (selected,amount);
 }
 
-function armorSmithing(){
+/*function armorSmithing(){
     print ("What type")
     //Toughened Crude Iron Armor
     var sOTCIA = 1
@@ -166,56 +166,79 @@ function weaponSmithing(){
     //Reaving Iron Armaments
     var rIA = 1
     //Bulwark Crude Iron Armaments
-    var bCIA=2                              //- add
+    var bulCIA=2                              //- add
     //Bruising Crude Iron Armametns
-    var brCIA = 1                           //-add
+    var bruCIA = 1                           //-add
 }
-
+*/
 function hunt(){
     print ("What are you hunting?")
     display ('rabits', 'turkey','elk','bear')
-    var selected = //whatever was clicked when there was stuff displayed
+    var selected = 0//whatever was clicked when there was stuff displayed
     print("How many do you need")
     display (3,15,25)
     dsiplay('custom amount')//display custom button under card options
-    var amount = //whatever the user selected
+    var amount = 0//whatever the user selected
     return (selected,amount);
 }
+//Impaling Iron Armaments
+var iIA = 0
+//Reaving Iron Armaments
+var rIA = 0
+//Bulwark Crude Iron Armaments
+var bulCIA = 0                              
+//Bruising Crude Iron Armaments
+var bruCIA = 0                           //-add
+//Toughened Crude Iron Armor
+var sOTCIA = 0
+//Hardened Crude Iron Armor
+var sOHCIA = 1                      
+//Plundering Iron Armanets
+var pIA = 0
+
+var sOICIA =  0
+var sORCIA = 0
+var bIA = 0
+var cIA = 0
+var cCIA = 0
 
 //------------------
 //COST LOGIC
 //------------------
-var eLRations = 20
-var eTRations = 20
-var lRations = 20
+
+
+var eLRations = 0
+var eTRations = 0
+var lRations = 0
 //---------------
-var silk = 80
+var silk = 0
 //---------------
-var rawHide = 150
 //-----------------
-var iIngot = 90 + iIA*4 + rIA*9 + bIA*15 + cIA*7
+var iIngot = 0 
 //--------------------
-var cLeather = 0 + (iIA* 12) + (rIA*24) + (bIA*5) + (cIA*10)
+var cLeather = 0 
 //------------------
-var fiber = 200
 //------------------
-var lumber = 25
+var lumber = 0
 //------------
-var sBlock = 80
-var sBrick = 40
+var sBlock = 0
+var sBrick = 0
 ///------------
-var wLBait = 20  // VVV
-var nCBait = 5   // VVV
+var wLBait = 0  // VVV
+var nCBait = 0  // VVV
 //------------------------
-var cMPot = 10
-var wMPot = 35
+var cMPot = 0
+var wMPot = 0
 //------------------------
 
-var timber = 0 + iIA*4 + rIA *7 + bIA*5 + cIA*8
+
+var fiber = 0 + (sOHCIA * 15) 
+var rawHide = 0 + (sOHCIA * 15)
+var timber = 0 
 var stone = 0
 var gWood = 0
 var linen = 0
-var iOre = 0
+var iOre = 0 + (sOHCIA * 20)
 var water = 0
 
 var t1RF = (1 * eLRations) + (1 * lRations)
@@ -226,13 +249,14 @@ var rF = 1*eTRations
 
 var sateen_c = 2 * silk 
 var linen_c = 4 * sateen_c + linen
-
-var silkThread_c = 6 * silk
-var fibers_c = linen_c * 4 + fiber
 var cWFlux_c = 1* silk + 1 * linen_c
+var silkThread_c = 6 * silk
+
+var fibers_c = linen_c * 4 + fiber
+
 
 var iIngot_c = iIngot
-var iOre_c = iIngot_c * 4 + iOre
+var iOre_c = iIngot_c * 4 + iOre 
 
 var timber_c = lumber * 2 + timber
 var agedWood_Base = lumber * 4
@@ -256,10 +280,10 @@ var water_c = wMPot *1 + cMPot *1 + water
 
 
 
-var gWood_Base = gWood_c + cCIA *15
-var fibers_Base = fibers_c + sOTCIA*12 + sOICIA*26 + sORCIA*10
-var rawHide_Base = rawHide_c +cCIA*15 + sOTCIA*9 + sOICIA*12 + sORCIA*6
-var iOre_Base = iOre_c + cCIA * 20 + sOTCIA * 9 + sOICIA * 12 + sORCIA * 14
+var gWood_Base = gWood_c 
+var fibers_Base = fibers_c 
+var rawHide_Base = rawHide_c 
+var iOre_Base = iOre_c 
 var stone_Base = stone_c
 var water_Base = water_c
 var briarBuds_Base =briarBuds_c
