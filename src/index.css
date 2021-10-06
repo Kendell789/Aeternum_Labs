@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
 
 * {
+  background-image: url(https://d2lchq0n03yu65.cloudfront.net/statics/2021-10-06/images/texture-bottom.jpg);
+  background-position: center;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'IM Fell DW Pica', serif;
+  color: #d5d5d5;
+  
 }
 
 .container {
@@ -15,7 +20,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid #d5d5d5;
   padding: 30px;
   border-radius: 5px;
 }
@@ -25,20 +30,22 @@ body {
   align-items: center;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 36px;
 
 }
 
 .btn {
+  width: 32%;
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: #ffb10f;
+  color: #272624;
   border: none;
-  padding: 10px 20px;
+  padding:  20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 24px;
   font-family: inherit;
 }
 

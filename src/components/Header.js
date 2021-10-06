@@ -7,20 +7,20 @@ const Header = ({ title }) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button color = 'green' text = 'cooksNeeded' onClick={cooksNeededf}/>
-            <Button color = 'green' text = 'weaversNeeded'/>
-            <Button color = 'green' text = 'fisherFolkNeeded'/>
-            <Button color = 'green' text = 'huntersNeeded'/>
-            <Button color = 'green' text = 'metalWorkersNeeded'/>
-            <Button color = 'green' text = 'alchemistsNeeded'/>
-            <Button color = 'green' text = 'harvestersNeeded'/>
-            <Button color = 'green' text = 'carpentersNeeded'/>
-            <Button color = 'green' text = 'stoneMasonNeeded'/>
-            <Button color = 'green' text = 'lumberJacksNeeded'/>
-            <Button color = 'green' text = 'suppliesNeeded'/>
-            <Button color = 'green' text = 'armorSmithing'/>
-            <Button color = 'green' text = 'weaponSmithing'/>
-            <Button color = 'green' text = 'hunt'/>
+            <Button text = 'Cooks Needed' onClick={cooksNeededf}/>
+            <Button text = 'Weavers Needed'/>
+            <Button text = 'Fisher Folk Needed'/>
+            <Button text = 'Hunters Needed'/>
+            <Button text = 'Metal Workers Needed'/>
+            <Button text = 'Alchemists Needed'/>
+            <Button text = 'Harvesters Needed'/>
+            <Button text = 'Carpenters Needed'/>
+            <Button text = 'StoneMason Needed'/>
+            <Button text = 'LumberJacks Needed'/>
+            <Button text = 'Supplies Needed'/>
+            <Button text = 'ArmorSmithing'/>
+            <Button text = 'WeaponSmithing'/>
+            <Button text = 'Hunt'/>
 
         </header>
     )

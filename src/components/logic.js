@@ -119,7 +119,7 @@
 
 // function stoneMasonNeeded() {
 //   print("What kind of stone do you need")
-//   display('Stone bricks', 'Stone blocks')
+//   display('Stone bricks', 'Stone blocks',)
 //   var selected = 0//whatever was clicked when there was stuff displayed
 //   print("How many do you need")
 //   display(25, 40, 50)
@@ -217,7 +217,7 @@ var sateen = 20
 //-----------------
 var iIngot = 0 + (rIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5)
 //--------------------
-var cLeather = 0 + (rIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8)
+var cLeather = 10 + (rIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8)
 //------------------
 //------------------
 var lumber = 0
@@ -230,7 +230,7 @@ var wLBait = 0  // VVV
 var nCBait = 0  // VVV
 //------------------------
 // common mana potion
-var cMPot = 0
+var cMPot = 5
 // weak mana potion
 var wMPot = 0
 //common regeneration potion
@@ -241,6 +241,8 @@ var sHPot = 2
 var sMPot = 2
 //Powerful Regeneration Potion
 var pRPot = 1
+//Common Health Potion
+var cHPot = 15
 //------------------------
 
 //--------------BASE---------------
@@ -283,13 +285,13 @@ var stone_c = sBlock_c * 4 + stone
 
 var rawHide_c = cLeather * 4 + rawHide
 var briarBuds_c = wMPot * 1
-var t2MR_c = cMPot * 1
+
+//Tier 2 Medicinal Reagents
+// t2MR_c is  Sporebloom fruit, Glowing Mushroom cap, Gillflower Gills, Platecap Flesh, LifeBloom Stem
+var t2MR_c = (cMPot * 1) + (cHPot * 1)
 
 
-var water_c = wMPot * 1 + cMPot * 1 + water
-
-
-
+var water_c = (cMPot * 1) + (wMPot * 1) + (cHPot * 1) + water
 
 
 
