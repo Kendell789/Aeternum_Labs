@@ -21,16 +21,12 @@ function App() {
     <div className="container">
       <Header/>
     </div>
-    <p style={{margin: '30px',float:'right'} }>
+    <div id="under">
     {tasks.length > 0 ? 
         <Tasks tasks = {tasks} 
         onDelete = {deleteTask}/> 
       : 'No Quest selected'}
-    </p>
-    <div id="wrapper">
-    <div id="c1">con1</div>
-    <div id="c2">con2</div>
-    </div>
+    </div> 
     </>
   );
 }

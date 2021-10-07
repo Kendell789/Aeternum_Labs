@@ -40,7 +40,7 @@ body {
   background: #ffb10f;
   color: #272624;
   border: none;
-  padding:  20px;
+  padding: 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
@@ -63,13 +63,21 @@ body {
 }
 
 .task {
-  width: 32%;
-  background: #4694602a;
+  width: 200px;
+  background: #9e947e;
   border-radius: 5px;
-  margin: 5px;
-  padding: 10px 20px;
+  margin: 10px;
+  padding: 5px 5px;
   cursor: pointer;
   border: none; 
+  
+
+}
+
+#under{
+  display:flex;
+  margin-left: 75px;
+  margin-right: 75px;
 
 }
 
@@ -78,7 +86,9 @@ body {
 }
 
 .task h3 {
-  display: flex;
+  width: 100%;
+  position: relative;
+  display: inline-block;
   align-items: center;
   justify-content: flex-start;
 }
@@ -118,24 +128,27 @@ body {
   height: 20px;
 }
 
-#wrapper{
-  background:red;
-  overflow:auto;
-}
-
-#c1{
- float:left;
- background:blue;
-}
-
-#c2{
-  background:green;
-  float:right;
-}​
-
 footer {
   margin-top: 30px;
   text-align: center;
 }
+
+
+#wrapper{
+  overflow:auto;
+}
+
+/* #c1{
+  width: 40%;
+  margin:'30px';
+  float:left;
+ }
+ 
+ #c2{
+  width: 50%;
+  margin: '30px';
+  float:right;
+   
+ }​ */
 
 

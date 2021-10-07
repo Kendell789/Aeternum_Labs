@@ -184,22 +184,35 @@
 
 
 //Impaling Iron Armaments
-var iIA = 1
+var iIA = 0
 //Reaving Iron Armaments
-var rIA = 1
+var reavIA = 1
 //Bulwark Crude Iron Armaments
-var bulCIA = 2
+var bulCIA = 0
 //Bruising Crude Iron Armaments
-var bruCIA = 1
+var bruCIA = 0
 //Toughened Crude Iron Armor
-var sOTCIA = 1
+var sOTCIA = 0
 //Hardened Crude Iron Armor
-var sOHCIA = 1
+var sOHCIA = 0
+//Rugged Iron Armor
+var RugIA = 1           
 //Plundering Iron Armanets
-var pIA = 2
+var pIA = 0
 // Crushiung Iron Armaents
-var cIA = 1
-
+var cIA = 0
+//Reaving Crude Iron Armaments 
+var reavCIA = 2         
+//Ransacking Crude Iron Armaments
+var ranCIA = 1              
+//Plundering Crude Iron Armaments
+var plunCIA = 1              
+//Crushing Crude Iron Armaments
+var cCIA = 1                
+//Hardened Iron Armor
+var hIA = 1         
+//Pillaging Crude Iron Armaments
+var pillCIA = 1     
 
 
 //------------------
@@ -209,62 +222,64 @@ var cIA = 1
 
 var eLRations = 0
 var eTRations = 0
-var lRations = 55
+var lRations = 0
+var tRations = 15
 //---------------
-var silk = 40
-var sateen = 20
+var silk = 0
+var sateen = 0
+var linen = -9 + (RugIA*10) + (hIA*10)
+
 //---------------
 //-----------------
-var iIngot = 0 + (rIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5)
+var iIngot = 50 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10)
 //--------------------
-var cLeather = 10 + (rIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8)
+var cLeather = -91 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5)
 //------------------
 //------------------
 var lumber = 0
-var timber = 180 + (rIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12)
+var timber = 0 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12)
 //------------
-var sBlock = 0
-var sBrick = 25
+var sBlock = 33
+var sBrick = 6
 ///------------
 var wLBait = 0  // VVV
 var nCBait = 0  // VVV
 //------------------------
 // common mana potion
-var cMPot = 5
+var cMPot = 0
 // weak mana potion
 var wMPot = 0
 //common regeneration potion
-var cRPot = 20
+var cRPot = 0
 //Strong Health Potion
-var sHPot = 2
+var sHPot = 0
 //strong Mana Potion
-var sMPot = 2
+var sMPot = 0
 //Powerful Regeneration Potion
-var pRPot = 1
+var pRPot = 0
 //Common Health Potion
-var cHPot = 15
+var cHPot = 0
 //------------------------
 
 //--------------BASE---------------
-var fiber = 100 + (sOHCIA * 15) + (sOTCIA * 12)
-var rawHide = 150 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10)
+var fiber = 50 + (sOHCIA * 15) + (sOTCIA * 12)
+var rawHide = 350 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25)
 var stone = 0
-var gWood = 950 + (bulCIA * 3) + (bruCIA * 20)
-var agedWood = 200
-var linen = 0
-var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20)
-var water = 100
+var gWood = 1500 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40)
+var agedWood = 0
+var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25)
+var water = 0
 var feathers = 0
 var oil = 40
-var t1RF = (1 * eLRations) + (1 * lRations)
-var t2RF = 1 * eTRations
-var rF = 1 * eTRations
+var t1RF = (0 * eLRations) + (1 * lRations)
+var t2RF = 0 * eTRations
+var rF = 0 * eTRations
 
-
+//calcs--------------------
 var silk_c = silk
 var sateen_c = 2 * silk_c + sateen
 var linen_c = 4 * sateen_c + linen
-var cWFlux_c = 1 * silk + 1 * linen_c
+var cWFlux_c = 1 * silk + 1 * sateen_c
 var silkThread_c = 6 * silk
 
 var fibers_c = linen_c * 4 + fiber
@@ -342,3 +357,21 @@ console.log("Water  " + water_Base)
 console.log("Briar Buds  " + briarBuds_Base)
 
 console.log("t2MR  " + t2MR_Base)
+
+
+
+
+//45 layered Leather
+//1440 raw hide
+//270 thick hide
+//90 Rugged Leather
+//360 Coarse Leather
+
+
+//23 silk
+//150 silk threads
+//50 sateen
+//200 linen
+//800 fibers
+
+

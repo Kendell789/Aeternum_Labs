@@ -6,8 +6,16 @@ const Task = ({ task, onDelete }) => {
             <h3>
                 {task.text}{' '} 
                 <FaTimes 
-                    style={{color:'red', 
-                    cursor:'pointer'}}
+                    style={{
+                    background: '#9e947e',
+                    borderRadius: '50%',
+                    color:'red', 
+                    cursor:'pointer',
+                    position:'absolute',
+                    display: 'inline-block',
+                    top:'-10',
+                    right: '-10'
+                    }}
                  onClick={() => onDelete(task.id)}
                  />
             </h3>
