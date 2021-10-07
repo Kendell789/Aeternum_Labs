@@ -63,10 +63,14 @@ body {
 }
 
 .task {
-  background: #096d2a2a;
+  width: 32%;
+  background: #4694602a;
+  border-radius: 5px;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border: none; 
+
 }
 
 .task.reminder {
@@ -114,7 +118,24 @@ body {
   height: 20px;
 }
 
+#wrapper{
+  background:red;
+  overflow:auto;
+}
+
+#c1{
+ float:left;
+ background:blue;
+}
+
+#c2{
+  background:green;
+  float:right;
+}​
+
 footer {
   margin-top: 30px;
   text-align: center;
 }
+
+

@@ -16,14 +16,22 @@ function App() {
             }
 
   return (
+    <>
+    <h1 style={{color:'#FFF1CE',margin: '30px' } }> Aeternum Labs</h1>
     <div className="container">
-      <h1 style={{color:'#FFF1CE'}}> Aeternum Labs</h1>
       <Header/>
-      {tasks.length > 0 ? 
+    </div>
+    <p style={{margin: '30px',float:'right'} }>
+    {tasks.length > 0 ? 
         <Tasks tasks = {tasks} 
         onDelete = {deleteTask}/> 
       : 'No Quest selected'}
+    </p>
+    <div id="wrapper">
+    <div id="c1">con1</div>
+    <div id="c2">con2</div>
     </div>
+    </>
   );
 }
 
