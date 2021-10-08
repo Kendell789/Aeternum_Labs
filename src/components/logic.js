@@ -183,10 +183,21 @@
 // }
 
 
+  //Delete Task
+  const deleteTask = (id) => {
+    console.log('delete',id)
+    setTasks(tasks.filter((task) => task.id !== id))
+            }
+  //Toggle Selected
+  const toggleSelected = (id) => {
+   // setResources(resources.map((resource) => resource.id === id ? { ...resource,selected: !resource.selected} : resource))
+   console.log(id)
+  }
+
 //Impaling Iron Armaments
-var iIA = 0
+var iIA = 1
 //Reaving Iron Armaments
-var reavIA = 1
+var reavIA = 0
 //Bulwark Crude Iron Armaments
 var bulCIA = 0
 //Bruising Crude Iron Armaments
@@ -196,13 +207,13 @@ var sOTCIA = 0
 //Hardened Crude Iron Armor
 var sOHCIA = 0
 //Rugged Iron Armor
-var RugIA = 1           
+var RugIA = 0           
 //Plundering Iron Armanets
 var pIA = 0
 // Crushiung Iron Armaents
 var cIA = 0
 //Reaving Crude Iron Armaments 
-var reavCIA = 2         
+var reavCIA = 0         
 //Ransacking Crude Iron Armaments
 var ranCIA = 1              
 //Plundering Crude Iron Armaments
@@ -210,9 +221,22 @@ var plunCIA = 1
 //Crushing Crude Iron Armaments
 var cCIA = 1                
 //Hardened Iron Armor
-var hIA = 1         
+var hIA = 0         
 //Pillaging Crude Iron Armaments
-var pillCIA = 1     
+var pillCIA = 0
+//Gashing Crude Iron Armaments
+var gCIA = 1                    
+//Impaling Crude Iron Arament
+var iCIA = 2                    
+//Bruising Iron Armaments
+var bIA = 1                     
+//Toughened Iron Armor
+var tIA = 1             
+//Cleaving Iron Armaments
+var cleaveIA = 1 
+
+
+   
 
 
 //------------------
@@ -220,27 +244,29 @@ var pillCIA = 1
 //------------------
 
 
-var eLRations = 0
+var eLRations = 20
 var eTRations = 0
 var lRations = 0
-var tRations = 15
+var tRations = 0
 //---------------
 var silk = 0
-var sateen = 0
-var linen = -9 + (RugIA*10) + (hIA*10)
+var sateen = 20
+var linen = 0 + (RugIA*10) + (hIA*10) + (tIA*5)
 
 //---------------
 //-----------------
-var iIngot = 50 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10)
+var iIngot = 100 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10) + (cleaveIA*7) + (tIA * 10) + (bIA *15)
 //--------------------
-var cLeather = -91 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5)
+var lLeather = 50 //-add
+var rLeather = -98
+var cLeather = 0 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5) + (cleaveIA*10) + (tIA * 5) + (bIA*5)
 //------------------
 //------------------
 var lumber = 0
-var timber = 0 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12)
+var timber = 0 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12) + (cleaveIA * 8) + (bIA*5)
 //------------
-var sBlock = 33
-var sBrick = 6
+var sBlock = 0
+var sBrick = 45
 ///------------
 var wLBait = 0  // VVV
 var nCBait = 0  // VVV
@@ -262,15 +288,16 @@ var cHPot = 0
 //------------------------
 
 //--------------BASE---------------
-var fiber = 50 + (sOHCIA * 15) + (sOTCIA * 12)
-var rawHide = 350 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25)
+var fiber = 0 + (sOHCIA * 15) + (sOTCIA * 12)
+var rawHide = 150 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30)
 var stone = 0
-var gWood = 1500 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40)
-var agedWood = 0
-var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25)
+var gWood = 1200 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40) + (iCIA*14) + (gCIA*30)
+var agedWood = 80
+var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30)
 var water = 0
 var feathers = 0
-var oil = 40
+var oil = 30
+var flint = 85
 var t1RF = (0 * eLRations) + (1 * lRations)
 var t2RF = 0 * eTRations
 var rF = 0 * eTRations
@@ -298,7 +325,21 @@ var sBlock_c = sBrick_c * 4 + sBlock
 var cSFluxS = sBrick * 1
 var stone_c = sBlock_c * 4 + stone
 
-var rawHide_c = cLeather * 4 + rawHide
+
+var lLeather_c = lLeather
+var ThickHide_c = lLeather_c * 6
+var rLeather_c = lLeather_c * 2 + rLeather
+var tFlux = rLeather_c * 1 +  rLeather_c *1
+var cLeather_c =  rLeather_c * 4  + cLeather
+var rawHide_c = cLeather_c * 4 + rawHide
+
+
+
+
+
+
+
+
 var briarBuds_c = wMPot * 1
 
 //Tier 2 Medicinal Reagents
@@ -322,56 +363,42 @@ var t2MR_Base = t2MR_c
 var silkThread_Base = silkThread_c
 
 
-console.log("Green Wood  " + gWood_Base)
-console.log("Aged Wood  " + agedWood_Base)
-console.log("Coarse sandpaper Flux  " + cSFluxL)
+console.log("Green Wood  " + gWood_Base + "--------------")
+console.log("Aged Wood  " + agedWood_Base + "--------------")
+console.log("Coarse sandpaper Flux  " + cSFluxL + "--------------")
 console.log("Craft into  " + timber_c + "  Timber")
 console.log("In order to make  " + lumber + "  Lumber")
 
 
-console.log("Raw Fibers  " + fibers_Base)
-console.log("Silk Thread  " + silkThread_Base)
-console.log("Cross Weave flux  " + cWFlux_c)
+console.log("Raw Fibers  " + fibers_Base + "--------------")
+console.log("Silk Thread  " + silkThread_Base + "--------------")
+console.log("Cross Weave flux  " + cWFlux_c + "--------------")
 console.log("Craft into  " + linen_c + "  linen")
 console.log("Craft into  " + sateen_c + "  sateen")
 console.log("In order to make  " + silk + "  silk")
 
-console.log("Raw Hide  " + rawHide_c)
+console.log("Raw Hide  " + rawHide_c + "--------------")
+console.log("Tannin" + tFlux + "--------------")
+console.log("Thick Hide " + ThickHide_c + "--------------")
 console.log("Craft into  " + cLeather + "  Coarse Leather")
+console.log("Craft into  " + rLeather_c + "  RuggedLeather")
+console.log("Craft into  " + lLeather + "  Layered Leather")
 
 
-
-console.log("Iron Ore  " + iOre_c)
+console.log("Iron Ore  " + iOre_c + "--------------")
 console.log("Craft into  " + iIngot_c + "  Iron Ingots")
 
 
-console.log("Stones  " + stone_Base)
-console.log("Coarse sandpaper Flux  " + cSFluxS)
+console.log("Stones  " + stone_Base + "--------------")
+console.log("Coarse sandpaper Flux  " + cSFluxS + "--------------")
 console.log("Craft into  " + sBlock_c + " Stone Blocks ")
 console.log("Craft into  " + sBrick + " Stone Bricks  ")
-console.log("Oil " + oil)
-console.log("Feathers " + feathers)
+console.log("Oil " + oil + "--------------")
+console.log("Feathers " + feathers + "--------------")
+console.log("Feathers " + flint + "--------------")
 //TODO::
 console.log("Water  " + water_Base)
 
 console.log("Briar Buds  " + briarBuds_Base)
 
 console.log("t2MR  " + t2MR_Base)
-
-
-
-
-//45 layered Leather
-//1440 raw hide
-//270 thick hide
-//90 Rugged Leather
-//360 Coarse Leather
-
-
-//23 silk
-//150 silk threads
-//50 sateen
-//200 linen
-//800 fibers
-
-

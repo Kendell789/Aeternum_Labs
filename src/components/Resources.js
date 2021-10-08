@@ -1,10 +1,10 @@
-import AddTask from './AddTask'
+import ResourceBtn from './ResourceBtn'
 
 const Resources = ({resources,onToggle}) => {
      return(
          <>
              {resources.map((resource) => (
-                <AddTask key = {resource.id} resource = {resource} 
+                <ResourceBtn key = {resource.id} resource = {resource} 
                 onToggle = {onToggle}/>
              ))}
          </>
