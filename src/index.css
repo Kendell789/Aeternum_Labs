@@ -93,12 +93,45 @@ body {
   justify-content: flex-start;
 }
 
+.type-select {
+  width: 250px;
+  height: 100px;
+  display: inline-block;
+  background: #ffb10f;
+  color: #272624;
+  border: none;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: inherit;
+}
+
+.type-select:focus {
+  outline: none;
+}
+
+.type-select:active {
+  transform: scale(0.98);
+}
+
+
+
 .add-form {
-  margin-bottom: 40px;
+  margin: auto;
+  align-self: center;
+  margin-bottom: 1px;
+
 }
 
 .form-control {
-  margin: 20px 0;
+  margin: 20px ;
+  border: 1px solid #d5d5d5;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: inherit;
 }
 
 .form-control label {
@@ -106,11 +139,10 @@ body {
 }
 
 .form-control input {
-  width: 100%;
-  height: 40px;
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+
 }
 
 .form-control-check {

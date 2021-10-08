@@ -1,13 +1,10 @@
 import Button from "./Button"
 
-const Header = ({ title }) => {
-    const cooksNeededf = () =>{
-        console.log('What type or Food do you need to Cook')
-    }
+const Header = ({ title, onAdd }) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button text = 'Cooks Needed' onClick={cooksNeededf}/>
+            <Button text = 'Cooks Needed' onClick={onAdd}/>
             <Button text = 'Weavers Needed'/>
             <Button text = 'Fisher Folk Needed'/>
             <Button text = 'Hunters Needed'/>

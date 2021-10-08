@@ -19,7 +19,7 @@ const Task = ({ task, onDelete }) => {
                  onClick={() => onDelete(task.id)}
                  />
             </h3>
-            <p>{task.resource}</p>
+            <p>{task.resourceReq}</p>
         </div>
     )
 }
