@@ -49,6 +49,88 @@ body {
   font-family: inherit;
 }
 
+.btn:hover{
+    color: #d5d5d5;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 245px;
+  height: 70px;
+  padding: 1em;
+  text-align: center;
+  background: #ffb10f;
+  color: #272624;
+  border-radius: .8em;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+
+  
+}
+
+.card:hover{
+  color: #d5d5d5;
+}
+
+.cover{
+  display:inline-block;
+  place-items: center;
+  position: relative;
+  width: 255px;
+  height: 80px;
+  border-radius: 1em;
+  background: linear-gradient(50deg, #2a5a3b,#1e4886);
+  overflow: hidden;
+  padding:5px;
+  margin: 5px;
+
+}
+
+.selectedCover{
+  display: inline-flex;
+  place-items: center;
+  position: relative;
+  width: 255px;
+  height: 80px;
+  border-radius: 1em;
+  background: linear-gradient(50deg, #00ff59,#02b3ff);
+  overflow: hidden;
+  padding:5px;
+  margin: 5px;
+  
+
+}
+
+.cover::before{
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 35px;
+  top: 0;
+  right: 35px;
+  transition: 1.9s;
+  background: linear-gradient(50deg, #00ff59,#02b3ff);
+  transform: rotate(-45deg) translate(0,-100px);
+}
+.cover:hover:before{
+  animation: cardEffect 1.9s;
+}
+
+@keyframes cardEffect {
+  100%{
+    transform:rotate(-45deg) translate(0,450px)
+  }
+  
+}
+
+.btn.selected {
+  border-left: 5px solid green;
+}
+
 .btn:focus {
   outline: none;
 }
@@ -81,9 +163,7 @@ body {
 
 }
 
-.task.reminder {
-  border-left: 5px solid green;
-}
+
 
 .task h3 {
   width: 100%;

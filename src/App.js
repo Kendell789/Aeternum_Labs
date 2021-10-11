@@ -18,8 +18,10 @@ function App() {
 
   const [resources,setResources] = useState([
     
-    {id:3, resourceType:'Silk', selected:false},
-    {id:4,  resourceType:'Green Wood', selected:false}
+    {id:3, resourceType:'Green Wood', selected:false},
+    {id:4,  resourceType:'Aged Wood', selected:false},
+    {id:5,  resourceType:'Lumber', selected:false},
+    {id:6,  resourceType:'Timber', selected:false}
   ])
 
   const amounts =
@@ -33,6 +35,7 @@ function App() {
     console.log('delete',id)
     setTasks(tasks.filter((task) => task.id !== id))
             }
+            
   //Toggle Selected
   const toggleSelected = (id) => {
    setResources(resources.map((resource) => resource.id === id ? { ...resource,selected: !resource.selected} : resource))
@@ -40,15 +43,7 @@ function App() {
   }
   
   return (
-
-
-
     <>
-
-
-
-
-
     <h1 style={{color:'#FFF1CE',margin: '30px'} }> Aeternum Labs</h1>
     <div className="container">
      

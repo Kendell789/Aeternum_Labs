@@ -2,15 +2,17 @@ const ResourceBtn = ({resource, onToggle}) => {
 
 
     return( 
-    <button 
-        onClick = {() => onToggle(resource.id)}
-        className='btn'>
-        
-        {resource.resourceType}
 
-    </button>
-    
-    
+        <div  className={`cover ${resource.selected ? 'selectedCover' : ''}`}  >
+            
+        <div onClick = {() => onToggle(resource.id)}
+            className = 'card'
+            >
+            
+            {resource.resourceType}
+
+        </div>
+        </div>
     )
 }
 

@@ -12,15 +12,13 @@ const AddTask = ( {resource, onToggle} ) => {
             //     {resource.resourceType}
             // </button>
 
-        <form className = 'add-form' onSubmit = {handleSubmit}>
+        <form className = 'add-form' onSubmit = {handleSubmit}  >
 
-            <div className='form-control'>
+            <div className='form-control' >
 
-                <label> What type of wood do you need </label>
-
-                   { resource.map((items,index) => <ResourceBtn key = {index} resource = {items} onToggle={onToggle}/> ) }
-               
-            </div>
+                <label > What type of wood do you need </label>
+                   { resource.map((items,index) => <ResourceBtn key = {index} resource = {items} onToggle={onToggle}  /> ) }
+                </div>
 
             <div className='form-control'>
 
