@@ -5,8 +5,7 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
-import ApiCall from './components/ApiCall'
-import axios from 'axios'
+import axios, { Axios } from 'axios'
 
 
 var selectedResourceId;
@@ -18,40 +17,44 @@ function App() {
   //fetch tasks
   const FetchTasks = () =>{
       useEffect(()=>{
-      axios.get("http://localhost:5000/api/members/")
+      axios.get("http://localhost:5000/api/quests/")
               .then(res => setTasks(res.data))
+              .catch(err => console.log(err))
+    }, []);
+
+    }
+
+  //fetch Resources
+    const FetchMats = () =>{
+      useEffect(()=>{
+      axios.get("http://localhost:5000/api/mats/")
+              .then(res => setResources(res.data))
               .catch(err => console.log(err))
     }, []);
     }
 
+  //fetch Amounts
+  const FetchAmt = () =>{
+    useEffect(()=>{
+    axios.get("http://localhost:5000/api/amount/")
+            .then(res => setAmounts(res.data))
+            .catch(err => console.log(err))
+  }, []);
+  }
 
   FetchTasks()
-
-
-
+  FetchMats()
+  FetchAmt()
 
   const [tasks,setTasks] = useState([])
+  const [resources,setResources] = useState([])
+  const [amounts,setAmounts] = useState([])
 
 
-  const [resources,setResources] = useState([
-    
-    {id:0, resourceType:'Green Wood', selected:false},
-    {id:1,  resourceType:'Aged Wood', selected:false},
-    {id:2,  resourceType:'Lumber', selected:false},
-    {id:3,  resourceType:'Timber', selected:false}
-  ])
 
-  const [amounts,setAmounts] = useState([
-    {id:0, val:150, selected:false },
-    {id:1,  val:200, selected:false },
-    {id:2,  val:250, selected:false },
-    {id:3,  val:300, selected:false },
-  ])
 
   //create Task
   const createTask = () => {
-    // var querystring = require('querystring');
-
 
     var selectedAmount = amounts.filter(amount => {
       return amount.id === selectedAmountId
@@ -60,27 +63,40 @@ function App() {
       return resource.id === selectedResourceId
     })
 
-    // axios.post("http://localhost:5000/api/members/",querystring.stringify({
-
-    //   id: 4,
-    //   text: 'LumberJacks Neededsda',
-    //   resourceAmountReq: '150ds',
-    //   resourceTypeReq: 'Green Wooddsa'
-    // }))
-    const testid = Math.floor(Math.random()*10000)+1
-    const resourceAmountReq = selectedAmount[0].val
-    const resourceTypeReq = selectedResourceType[0].resourceType
-    const id = testid
-    const text = selectedQuest.text
-
+     const testid = Math.floor(Math.random()*10000)+1
+     const resourceAmountReq = selectedAmount[0].val
+     const resourceTypeReq = selectedResourceType[0].resourceType
+     const id = testid
+     const text = selectedQuest.text
+    
     const newTask = {id,text,resourceAmountReq,resourceTypeReq}
 
     console.log(newTask)
 
     setTasks([...tasks, newTask])
+    sendPutRequest()
 
   
   }
+  //new function to just Attempt to just get somthing to work
+  async function sendPutRequest(){
+            //tried put post nothing works
+    const response = await axios.post(
+      "http://localhost:5000/api/quests/",
+      {
+
+      id: "42",
+      resourceAmountReq : 'LumberJacks Neededsda',
+      resourceTypeReq : '150ds',
+      text : 'Green Wooddsa'
+
+      }
+    );
+
+    console.log(response.data);
+
+  }
+
 
 
 
@@ -88,11 +104,11 @@ function App() {
   const deleteTask = (id) => {
     console.log('delete',id)
     setTasks(tasks.filter((task) => task.id !== id))
-    axios.delete(`http://localhost:5000/api/members/${id}`)
-        .then(res => console.log(res.data));
-        
-
+    axios.delete(`http://localhost:5000/api/quests/${id}`)
+        .then(res => console.log(res.data));   
   }
+
+
   //Toggle Selected Resource        
   const toggleSelectedR = (id) => {
     selectedResourceId = id
@@ -119,6 +135,7 @@ function App() {
       setAmounts([...amounts.slice(0, i), amount])
     })
   }
+  
   //const Quest name
   const qName = (questName)=>{
     selectedQuest = questName
@@ -135,7 +152,8 @@ function App() {
       <>
       <div className="container">
 
-      <Header onPush = {qName} />
+      <Header onPush = {qName}
+                />
       </div>
 
       <div id="under">

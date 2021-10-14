@@ -1,7 +1,7 @@
 const express = require('express');
 const uuid = require('uuid');
 const router = express.Router();
-const members = require('../../Members');
+const members = require('../../Quests');
 
 const idFilter = req => member => member.id === parseInt(req.params.id);
 

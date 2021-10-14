@@ -1,35 +1,30 @@
 const express = require('express');
 const path = require('path');
-const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
-const members = require('./Members');
 
 const app = express();
 
 // Init middleware
 // app.use(logger);
 
-// Handlebars Middleware
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-
 // Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Homepage Route
-app.get('/', (req, res) =>
-  res.render('index', {
-    title: 'Member App',
-    members
-  })
-);
-
-// Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Members API Routes
-app.use('/api/members', require('./routes/api/members'));
+app.use('/api/mats', require('./routes/api/mats'));
+app.use('/api/amount', require('./routes/api/amount'));
+app.use('/api/quests', require('./routes/api/quests'));
+
+
+app.put("/api/quests", (request,response) => {
+    response.json(request.body);
+    //added this response things cuz of some github post but still got same error
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Credentials", "true");
+    response.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    response.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+});
 
 const PORT = process.env.PORT || 5000;
 
