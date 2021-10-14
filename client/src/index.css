@@ -15,6 +15,13 @@ body {
   
 }
 
+.p{
+  text-align: left;
+  font-size: 120%;
+  padding-left: 15px;
+
+}
+
 .container {
   max-width: 95%;
   margin: 30px auto;
@@ -157,9 +164,10 @@ body {
 }
 
 #under{
-  display:flex;
-  margin-left: 75px;
-  margin-right: 75px;
+  display:inline-flex;
+  overflow: auto;
+  flex-wrap: wrap;
+
 
 }
 

@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom';
 
-const Button = ({color,text, onClick}) => {
+const Button = ({color,text,onPush}) => {
 
     const history = useHistory();
 
     const goToReceiver = () => {
+        onPush({text})
         history.push("/add",{
                         name: text});
     }  

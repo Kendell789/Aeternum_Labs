@@ -12,8 +12,10 @@ router.get('/', (req, res) => {
 
 // Get Single Member
 router.get('/:id', (req, res) => {
+  //gives us a false or true based on if the id reqested is found in members
   const found = members.some(idFilter(req));
 
+  //if found == true else throw 400 status
   if (found) {
     res.json(members.filter(idFilter(req)));
   } else {
@@ -39,22 +41,22 @@ router.post('/', (req, res) => {
 });
 
 // Update Member
-router.put('/:id', (req, res) => {
-  const found = members.some(idFilter(req));
+// router.put('/:id', (req, res) => {
+//   const found = members.some(idFilter(req));
 
-  if (found) {
-    members.forEach((member, i) => {
-      if (idFilter(req)(member)) {
+//   if (found) {
+//     members.forEach((member, i) => {
+//       if (idFilter(req)(member)) {
 
-        const updMember = {...member, ...req.body};
-        members[i] = updMember
-        res.json({ msg: 'Member updated', updMember });
-      }
-    });
-  } else {
-    res.status(400).json({ msg: `No member with the id of ${req.params.id}` });
-  }
-});
+//         const updMember = {...member, ...req.body};
+//         members[i] = updMember
+//         res.json({ msg: 'Member updated', updMember });
+//       }
+//     });
+//   } else {
+//     res.status(400).json({ msg: `No member with the id of ${req.params.id}` });
+//   }
+// });
 
 // Delete Member
 router.delete('/:id', (req, res) => {

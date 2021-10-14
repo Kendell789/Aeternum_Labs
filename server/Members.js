@@ -1,22 +1,25 @@
-const members = [
+const quests = [
+  {
+    id: 0,
+    text: 'Weavers Needed',
+    resourceAmountReq: '25',
+    resourceTypeReq: 'Silk'
+  },
   {
     id: 1,
-    name: 'John Doe',
-    email: 'john@gmail.com',
-    status: 'active'
+    text: 'Cooks Needed',
+    resourceAmountReq: '15',
+    resourceTypeReq: 'Light Rations'
   },
   {
     id: 2,
-    name: 'Bob Williams',
-    email: 'bob@gmail.com',
-    status: 'inactive'
-  },
-  {
-    id: 3,
-    name: 'Shannon Jackson',
-    email: 'shannon@gmail.com',
-    status: 'active'
+    text: 'LumberJacks Needed',
+    resourceAmountReq: '150',
+    resourceTypeReq: 'Green Wood'
   }
 ];
 
-module.exports = members;
+
+
+
+module.exports = quests;

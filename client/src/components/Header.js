@@ -1,23 +1,23 @@
 import Button from "./Button"
 
-const Header = ({ title, onAdd }) => {
+const Header = ({ title, onPush }) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button text = 'Cooks Needed' onClick={onAdd}/>
-            <Button text = 'Weavers Needed'/>
-            <Button text = 'Fisher Folk Needed'/>
-            <Button text = 'Hunters Needed'/>
-            <Button text = 'Metal Workers Needed'/>
-            <Button text = 'Alchemists Needed'/>
-            <Button text = 'Harvesters Needed'/>
-            <Button text = 'Carpenters Needed'/>
-            <Button text = 'StoneMason Needed'/>
-            <Button text = 'LumberJacks Needed'/>
-            <Button text = 'Supplies Needed'/>
-            <Button text = 'ArmorSmithing'/>
-            <Button text = 'WeaponSmithing'/>
-            <Button text = 'Hunt'/>
+            <Button text = 'Cooks Needed' onPush = {onPush}/>
+            <Button text = 'Weavers Needed'onPush = {onPush}/>
+            <Button text = 'Fisher Folk Needed'onPush = {onPush}/>
+            <Button text = 'Hunters Needed'onPush = {onPush}/>
+            <Button text = 'Metal Workers Needed'onPush = {onPush}/>
+            <Button text = 'Alchemists Needed'onPush = {onPush}/>
+            <Button text = 'Harvesters Needed'onPush = {onPush}/>
+            <Button text = 'Carpenters Needed'onPush = {onPush}/>
+            <Button text = 'StoneMason Needed'onPush = {onPush}/>
+            <Button text = 'LumberJacks Needed'onPush = {onPush}/>
+            <Button text = 'Supplies Needed'onPush = {onPush}/>
+            <Button text = 'ArmorSmithing'onPush = {onPush}/>
+            <Button text = 'WeaponSmithing'onPush = {onPush}/>
+            <Button text = 'Hunt'onPush = {onPush}/>
 
         </header>
     )

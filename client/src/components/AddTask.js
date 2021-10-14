@@ -1,21 +1,23 @@
-import { useState } from 'react'
 import ResourceBtn from "./ResourceBtn"
 import AmountBtn from "./AmountBtn"
 import { useLocation } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 
-const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
-    const handleSubmit = (e) => {
+const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
+    
+    const onSubmit = (e) => {
         e.preventDefault()
+
     }
 
     const location = useLocation();
 
     const history = useHistory();
     const redirect = () => {
+        onAdd()
         history.push('/', { id:2, text:'re' , val:'r200', resourceTypeReq: 'er'} )
-    }   
+    } 
 
 
 
@@ -24,7 +26,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
 
 
 
-        <form className = 'add-form' onSubmit = {handleSubmit}  >
+        <form className = 'add-form' onSubmit = {onSubmit}  >
             <h1>
             {location.state.name}
             </h1>
@@ -34,7 +36,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
                 <label > What type of wood do you need </label>
                 
 
-                   { resource.map((items,index) => <ResourceBtn key = {index} resource = {items} onToggleR={onToggleR}  /> ) }
+                   { resource.map((items,index) => <ResourceBtn key = {index} resource = {items} onToggleR={onToggleR}/> ) }
 
 
                 </div>
@@ -43,15 +45,15 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
 
             <label> How Much?  </label>
 
-                { amount.map((items,index) => <AmountBtn key = {index} amount = {items} onToggleA={onToggleA}  /> ) }
+                { amount.map((items,index) => <AmountBtn key = {index} amount = {items} onToggleA={onToggleA}/> ) }
 
 
-        </div>
+            </div>
             
             
            
             
-             <input type='submit' value='Add Quest' className = 'btn btn-block' onClick = {redirect}/>
+             <input type='button' value='Add Quest' className = 'btn btn-block' onClick = {redirect}/>
         
 
         </form>

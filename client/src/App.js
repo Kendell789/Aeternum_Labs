@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { BrowserRouter as Router,Route} from 'react-router-dom' 
 import Header from './components/Header'
 import Tasks from './components/Tasks'
@@ -6,10 +6,32 @@ import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
 import ApiCall from './components/ApiCall'
+import axios from 'axios'
+
+
+var selectedResourceId;
+var selectedAmountId;
+var selectedQuest;
 
 function App() {
+  
+  //fetch tasks
+  const FetchTasks = () =>{
+      useEffect(()=>{
+      axios.get("http://localhost:5000/api/members/")
+              .then(res => setTasks(res.data))
+              .catch(err => console.log(err))
+    }, []);
+    }
+
+
+  FetchTasks()
+
+
+
 
   const [tasks,setTasks] = useState([])
+
 
   const [resources,setResources] = useState([
     
@@ -26,15 +48,54 @@ function App() {
     {id:3,  val:300, selected:false },
   ])
 
+  //create Task
+  const createTask = () => {
+    // var querystring = require('querystring');
+
+
+    var selectedAmount = amounts.filter(amount => {
+      return amount.id === selectedAmountId
+    })
+    var selectedResourceType = resources.filter(resource => {
+      return resource.id === selectedResourceId
+    })
+
+    // axios.post("http://localhost:5000/api/members/",querystring.stringify({
+
+    //   id: 4,
+    //   text: 'LumberJacks Neededsda',
+    //   resourceAmountReq: '150ds',
+    //   resourceTypeReq: 'Green Wooddsa'
+    // }))
+    const testid = Math.floor(Math.random()*10000)+1
+    const resourceAmountReq = selectedAmount[0].val
+    const resourceTypeReq = selectedResourceType[0].resourceType
+    const id = testid
+    const text = selectedQuest.text
+
+    const newTask = {id,text,resourceAmountReq,resourceTypeReq}
+
+    console.log(newTask)
+
+    setTasks([...tasks, newTask])
+
+  
+  }
+
+
 
   //Delete Task
   const deleteTask = (id) => {
     console.log('delete',id)
     setTasks(tasks.filter((task) => task.id !== id))
-            }
-            
+    axios.delete(`http://localhost:5000/api/members/${id}`)
+        .then(res => console.log(res.data));
+        
+
+  }
   //Toggle Selected Resource        
   const toggleSelectedR = (id) => {
+    selectedResourceId = id
     resources.map((resource, i) => {
       if(id === i){
         resource.selected = true;
@@ -42,11 +103,13 @@ function App() {
         resource.selected = false;
       }
       setResources([...resources.slice(0, i), resource])
+      
     })
   }
 
   //Toggle Selected Amount
   const toggleSelectedA = (id) => {
+    selectedAmountId = id
     amounts.map((amount, i) => {
       if(id === i){
         amount.selected = true;
@@ -55,6 +118,10 @@ function App() {
       }
       setAmounts([...amounts.slice(0, i), amount])
     })
+  }
+  //const Quest name
+  const qName = (questName)=>{
+    selectedQuest = questName
   }
   
   return (
@@ -68,9 +135,7 @@ function App() {
       <>
       <div className="container">
 
-      <Header />
-
-      <ApiCall/>
+      <Header onPush = {qName} />
       </div>
 
       <div id="under">
@@ -91,6 +156,7 @@ function App() {
       <AddTask 
         resource = {resources}
         amount = {amounts}
+        onAdd = {createTask}
         onToggleR={toggleSelectedR}
         onToggleA={toggleSelectedA}
         />

@@ -15,7 +15,7 @@ const ApiCall = () => {
     return (
         <div>
             {
-                members? members.map((member) => <p>{member.name}</p>): "no members"
+                members? members.map((member) => <p>{member.text}</p>): "no members"
             }
         </div>
     )
