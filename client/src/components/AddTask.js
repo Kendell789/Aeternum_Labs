@@ -14,7 +14,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
 
     const history = useHistory();
     const redirect = () => {
-        history.push('/', { id:6, text:'re' , val:'r200', resourceTypeReq: 'er'} )
+        history.push('/', { id:2, text:'re' , val:'r200', resourceTypeReq: 'er'} )
     }   
 
 
@@ -23,9 +23,6 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA } ) => {
     return (
 
 
-            // <button className = 'type-select' onClick={() => onToggle(resource.id)}>
-            //     {resource.resourceType}
-            // </button>
 
         <form className = 'add-form' onSubmit = {handleSubmit}  >
             <h1>
