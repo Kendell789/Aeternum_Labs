@@ -13,11 +13,12 @@ var selectedAmountId;
 var selectedQuest;
 
 function App() {
+
   
   //fetch tasks
   const FetchTasks = () =>{
       useEffect(()=>{
-      axios.get("http://localhost:5000/api/quests/")
+      axios.get('http://localhost:5000/quests')
               .then(res => setTasks(res.data))
               .catch(err => console.log(err))
     }, []);
@@ -27,7 +28,7 @@ function App() {
   //fetch Resources
     const FetchMats = () =>{
       useEffect(()=>{
-      axios.get("http://localhost:5000/api/mats/")
+      axios.get("http://localhost:5000/mats")
               .then(res => setResources(res.data))
               .catch(err => console.log(err))
     }, []);
@@ -36,7 +37,7 @@ function App() {
   //fetch Amounts
   const FetchAmt = () =>{
     useEffect(()=>{
-    axios.get("http://localhost:5000/api/amount/")
+    axios.get("http://localhost:5000/amounts")
             .then(res => setAmounts(res.data))
             .catch(err => console.log(err))
   }, []);
@@ -63,39 +64,16 @@ function App() {
       return resource.id === selectedResourceId
     })
 
-     const testid = Math.floor(Math.random()*10000)+1
-     const resourceAmountReq = selectedAmount[0].val
-     const resourceTypeReq = selectedResourceType[0].resourceType
-     const id = testid
-     const text = selectedQuest.text
-    
-    const newTask = {id,text,resourceAmountReq,resourceTypeReq}
-
-    console.log(newTask)
-
-    setTasks([...tasks, newTask])
-    sendPutRequest()
-
-  
+    const newQuest = {
+     id : Math.floor(Math.random()*10000)+1,
+     text : selectedQuest.text,
+     resourceAmountReq : selectedAmount[0].val,
+     resourceTypeReq : selectedResourceType[0].resourceType
+    }
+    console.log(newQuest)
+    axios.post('http://localhost:5000/quests',newQuest)
   }
-  //new function to just Attempt to just get somthing to work
-  async function sendPutRequest(){
-            //tried put post nothing works
-    const response = await axios.post(
-      "http://localhost:5000/api/quests/",
-      {
 
-      id: "42",
-      resourceAmountReq : 'LumberJacks Neededsda',
-      resourceTypeReq : '150ds',
-      text : 'Green Wooddsa'
-
-      }
-    );
-
-    console.log(response.data);
-
-  }
 
 
 
@@ -104,7 +82,8 @@ function App() {
   const deleteTask = (id) => {
     console.log('delete',id)
     setTasks(tasks.filter((task) => task.id !== id))
-    axios.delete(`http://localhost:5000/api/quests/${id}`)
+    const object = (tasks.find(x => x.id === id))
+    axios.delete(`http://localhost:5000/quests/${object._id}`)
         .then(res => console.log(res.data));   
   }
 
