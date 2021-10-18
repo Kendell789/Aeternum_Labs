@@ -58,11 +58,15 @@ function App() {
   const createTask = () => {
 
     var selectedAmount = amounts.filter(amount => {
-      return amount.id === selectedAmountId
+      return amount._id === selectedAmountId
     })
+
     var selectedResourceType = resources.filter(resource => {
-      return resource.id === selectedResourceId
+      return resource._id === selectedResourceId
     })
+    
+    console.log(selectedAmount)
+    console.log(selectedResourceType)
 
     const newQuest = {
      id : Math.floor(Math.random()*10000)+1,
@@ -89,8 +93,8 @@ function App() {
 
 
   //Toggle Selected Resource        
-  const toggleSelectedR = (id) => {
-    selectedResourceId = id
+  const toggleSelectedR = (id,_id) => {
+    selectedResourceId = _id
     resources.map((resource, i) => {
       if(id === i){
         resource.selected = true;
@@ -103,8 +107,8 @@ function App() {
   }
 
   //Toggle Selected Amount
-  const toggleSelectedA = (id) => {
-    selectedAmountId = id
+  const toggleSelectedA = (id,_id) => {
+    selectedAmountId = _id
     amounts.map((amount, i) => {
       if(id === i){
         amount.selected = true;

@@ -1,11 +1,11 @@
-const ResourceBtn = ({resource, onToggleR}) => {
+const ResourceBtn = ({resource, onToggleR,index}) => {
 
 
     return( 
 
         <div  className={`cover ${resource.selected ? 'selectedCover' : ''}`}  >
             
-        <div onClick = {() => onToggleR(resource.id)}
+        <div onClick = {() => onToggleR(index,resource._id)}
             className = 'card'
             >
             

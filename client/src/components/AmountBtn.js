@@ -1,11 +1,11 @@
-const AmountBtn = ({amount, onToggleA}) => {
+const AmountBtn = ({amount, onToggleA,index}) => {
 
 
     return( 
 
         <div  className={`cover ${amount.selected ? 'selectedCover' : ''}`}  >
             
-        <div onClick = {() => onToggleA(amount.id)}
+        <div onClick = {() => onToggleA(index,amount._id)}
             className = 'card'
             >
             

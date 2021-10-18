@@ -36,7 +36,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
                 <label > What type of wood do you need </label>
                 
 
-                   { resource.map((items,index) => <ResourceBtn key = {index} resource = {items} onToggleR={onToggleR}/> ) }
+                   { resource.map((items,index) => <ResourceBtn key = {index} index = {index} resource = {items} onToggleR={onToggleR}/> ) }
 
 
                 </div>
@@ -45,7 +45,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
 
             <label> How Much?  </label>
 
-                { amount.map((items,index) => <AmountBtn key = {index} amount = {items} onToggleA={onToggleA}/> ) }
+                { amount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA}/> ) }
 
 
             </div>
