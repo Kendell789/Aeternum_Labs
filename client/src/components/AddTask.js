@@ -4,19 +4,31 @@ import { useLocation } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 
-const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
+const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
     
     const onSubmit = (e) => {
         e.preventDefault()
 
-    }
 
-    const location = useLocation();
+    }
+    var displayResource = resource.filter(resource => {
+        return resource.quest === quest.text
+      })
+
+    var displayAmount = amount.filter(amount => {
+        return quest.text === amount.quests
+      })
+
+
 
     const history = useHistory();
+    
     const redirect = () => {
         onAdd()
-        history.push('/', { id:2, text:'re' , val:'r200', resourceTypeReq: 'er'} )
+        history.push('/', )
+        history.go(0)
+
+
     } 
 
 
@@ -28,15 +40,15 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
 
         <form className = 'add-form' onSubmit = {onSubmit}  >
             <h1>
-            {location.state.name}
+            {quest.text}
             </h1>
 
             <div className='form-control' >
 
-                <label > What type of wood do you need </label>
+                <label > What type of resource do you need </label>
                 
 
-                   { resource.map((items,index) => <ResourceBtn key = {index} index = {index} resource = {items} onToggleR={onToggleR}/> ) }
+                   { displayResource.map((items,index) => <ResourceBtn key = {index} index = {index} resource = {items} onToggleR={onToggleR}/> ) }
 
 
                 </div>
@@ -45,7 +57,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd } ) => {
 
             <label> How Much?  </label>
 
-                { amount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA}/> ) }
+                { displayAmount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA}/> ) }
 
 
             </div>

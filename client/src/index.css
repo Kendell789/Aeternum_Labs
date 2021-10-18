@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-  max-width: 95%;
+  max-width: 63%;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
@@ -152,7 +152,7 @@ body {
 }
 
 .task {
-  width: 200px;
+  width: 210px;
   background: #9e947e;
   border-radius: 5px;
   margin: 10px;
@@ -164,6 +164,9 @@ body {
 }
 
 #under{
+  margin-left: 100px;
+  margin-right: 100px;
+
   display:inline-flex;
   overflow: auto;
   flex-wrap: wrap;

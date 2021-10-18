@@ -5,7 +5,8 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
-import axios, { Axios } from 'axios'
+import Calc from './components/Calc'
+import axios from 'axios'
 
 
 var selectedResourceId;
@@ -56,7 +57,6 @@ function App() {
 
   //create Task
   const createTask = () => {
-
     var selectedAmount = amounts.filter(amount => {
       return amount._id === selectedAmountId
     })
@@ -64,9 +64,6 @@ function App() {
     var selectedResourceType = resources.filter(resource => {
       return resource._id === selectedResourceId
     })
-    
-    console.log(selectedAmount)
-    console.log(selectedResourceType)
 
     const newQuest = {
      id : Math.floor(Math.random()*10000)+1,
@@ -76,6 +73,8 @@ function App() {
     }
     console.log(newQuest)
     axios.post('http://localhost:5000/quests',newQuest)
+    window.location.reload(true);
+
   }
 
 
@@ -95,6 +94,8 @@ function App() {
   //Toggle Selected Resource        
   const toggleSelectedR = (id,_id) => {
     selectedResourceId = _id
+    console.log(selectedResourceId)
+    console.log(resources)
     resources.map((resource, i) => {
       if(id === i){
         resource.selected = true;
@@ -137,6 +138,9 @@ function App() {
 
       <Header onPush = {qName}
                 />
+
+      <Calc/>
+
       </div>
 
       <div id="under">
@@ -157,6 +161,7 @@ function App() {
       <AddTask 
         resource = {resources}
         amount = {amounts}
+        quest={selectedQuest}
         onAdd = {createTask}
         onToggleR={toggleSelectedR}
         onToggleA={toggleSelectedA}
@@ -174,6 +179,12 @@ function App() {
         
         
         </>
+        )}/>
+
+    < Route path = '/calc' exact render ={(props) => (
+      <>
+        Calcuate all the things
+      </>
         )}/>
 
     <Route path = '/about' component = {About}/>
