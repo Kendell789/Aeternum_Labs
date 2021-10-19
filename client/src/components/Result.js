@@ -4,6 +4,7 @@ import './script';
 const Result = ({quests}) => {
     var Total = {};
     var val = 312;
+    var baseVal = 1542;
 
     quests.forEach(element => {
         if (element.resourceTypeReq in Total){
@@ -38,7 +39,8 @@ const Result = ({quests}) => {
                 <section class="basic-grid">
                 <div className= "dropdown active" data-dropdown>
                 <button className="result-card" data-dropdown-button>Fiber</button>
-                <div className= "dropdown-menu">
+                <div className= "dropdown-menu" style={{fontSize: "29px"}}>
+                      {baseVal} Rawhide <br></br>
                       Craft into: <br></br>
                       {val} Linen<br></br>
                       {val} Sateen <br></br>
@@ -49,6 +51,7 @@ const Result = ({quests}) => {
                 <div className= "dropdown" data-dropdown>
                 <button className="result-card" data-dropdown-button>Rawhide</button>
                 <div className= "dropdown-menu" style={{fontSize: "26px"}} >
+                      {baseVal} Rawhide <br></br>
                       Craft into: <br></br>
                       {val} Coarse Leather<br></br>
                       {val} Rugged Leather <br></br>
@@ -59,6 +62,7 @@ const Result = ({quests}) => {
                 <div className= "dropdown" data-dropdown>
                 <button class="result-card" data-dropdown-button>Stone</button>
                 <div className= "dropdown-menu" style={{fontSize: "24px"}}>
+                      {baseVal} Stone <br></br>
                       Craft into: <br></br>
                       {val} Stone Block<br></br>
                       {val} Stone Brick <br></br>
@@ -69,6 +73,7 @@ const Result = ({quests}) => {
                 <div className= "dropdown" data-dropdown>
                 <button class="result-card" data-dropdown-button>Iron Ore</button>
                 <div className= "dropdown-menu" style={{fontSize: "25px"}}>
+                      {baseVal} Iron Ore <br></br>
                       Craft into: <br></br>
                       {val} Iron Ingot<br></br>
                       {val} Steel Ingot <br></br>
@@ -78,7 +83,8 @@ const Result = ({quests}) => {
                 </div>
                 <div className= "dropdown" data-dropdown>
                 <button class="result-card" data-dropdown-button>Green Wood</button>
-                <div className= "dropdown-menu">
+                <div className= "dropdown-menu" style={{fontSize: "29px"}}>
+                      {baseVal} Green Wood <br></br>
                       Craft into: <br></br>
                       {val} Linen<br></br>
                       {val} Sateen <br></br>

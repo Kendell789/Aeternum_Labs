@@ -75,7 +75,7 @@ body {
 .btn-calculate{
   width: 40%;
   display: inline-block;
-  background: #FFF1CE;
+  background: #bbaa86;
   color: #272624;
   border: none;
   padding: 20px;
@@ -91,7 +91,7 @@ body {
 }
 
 .btn-calculate:hover{
-  color: #ffb10f;
+  color: #d5d5d5;
 }
 
 .card{
@@ -233,6 +233,7 @@ body {
 }
 .rhead{
   padding-bottom: 15px;
+  color: #9e947e;
 }
 .flux{
 width: 73%;
