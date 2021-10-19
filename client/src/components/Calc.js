@@ -9,11 +9,10 @@ const goToReceiver=()=>{
 }
 
     return (
-        <button
+        <button className = 'btn-calculate'
             onClick={goToReceiver}
             >
-            Calculate ! 
-            All the stuff from the quests saved
+            Total Materials Needed
         </button>
     )
 }

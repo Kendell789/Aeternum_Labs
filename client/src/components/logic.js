@@ -1,189 +1,3 @@
-// //Eternum Labs
-// //---------------------------------------------------------------
-
-// /*if (userclick === cooksNeeded){
-//     cooksNeeded()
-// } else if(userclick === weaversNeeded){
-//      weaversNeeded()
-//  } else if(userclick === fisherFolkNeeded){
-//     fisherFolkNeeded()
-// } else if(userclick === huntersNeeded){
-//     huntersNeeded()
-// } else if(userclick === metalWorkersNeeded){
-//     metalWorkersNeeded()
-// } else if(userclick === alchemistsNeeded){
-//     alchemistsNeeded()
-// } else if(userclick === harvestersNeeded){
-//     harvestersNeeded()
-// } else if(userclick === carpentersNeeded){
-//     carpentersNeeded()
-// } else if(userclick === stoneMasonNeeded){
-//     stoneMasonNeeded()
-// } else if(userclick === lumberJacksNeeded){
-//     lumberJacksNeeded()
-// } else if(userclick === suppliesNeeded){
-//     suppliesNeeded()
-// } else if(userclick === armorSmithing){
-//     armorSmithing()
-// } else if(userclick === weaponSmithing){
-//     weaponSmithing()
-// } else if(userclick === hunt){
-//     hunt()
-// }
-// */
-// function cooksNeeded() {
-//   print("What type or Food do you need to Cook")
-//   display('lightRations', 'energizing', 'light rations', 'energizing travel rations')
-//   var selected = 0 //whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(10, 15, 20)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0 //whatever the user selected
-//   return (selected, amount);
-// }
-
-// function weaversNeeded() {
-//   print("What are you weaving")
-//   display('silk', 'Sateen')
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(15, 20, 25, 40)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function fisherFolkNeeded() {
-//   print("What kind of bait are you looking for ")
-//   display('NightcrawlerBait', 'WoodlouseBait', "Fish Oil", "firm fish filet", "tadpole")
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(5, 7, 10, 15, 20)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function huntersNeeded() {
-//   print("How much hide do you need")
-//   var selected = rawHide
-//   print("How many do you need")
-//   display(150)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function metalWorkersNeeded() {
-//   print("What type of metal do you need")
-//   display('Iron Ingots',)
-//   var selected = //whatever was clicked when there was stuff displayed
-//       print("How many do you need")
-//   display(90)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function alchemistsNeeded() {
-//   print("What kind of potions do you need")
-//   display('Lumber', 'Timber')
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(1, 2, 10, 15, 20)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function harvestersNeeded() {
-//   print("How much fiber do you need")
-//   var selected = fiber
-//   print("How many do you need")
-//   display(50, 100, 150)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function carpentersNeeded() {
-//   print("What kind of wood do you need")
-//   display('Lumber', 'Timber')
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(25, 90)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function stoneMasonNeeded() {
-//   print("What kind of stone do you need")
-//   display('Stone bricks', 'Stone blocks',)
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(25, 40, 50)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-// function lumberJacksNeeded() {
-//   print("What type of wood do you need")
-//   display('green wood', 'aged wood')
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(150, 200, 250, 300)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0 //whatever the user selected
-//   return (selected, amount);
-// }
-
-// function suppliesNeeded() {
-//   print("What type of supplies do you need ")
-//   display('oil', 'water', "feathers")
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(20, 40, 100, 250,)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0 //whatever the user selected
-//   return (selected, amount);
-// }
-
-// function armorSmithing(){
-//   print ("What type")
-//   //Toughened Crude Iron Armor
-//   var sOTCIA = 1
-//   //Hardened Crude Iron Armor
-//   var sOHCIA = 1                      
-//   //Plundering Iron Armanets
-//   var pIA = 2
-// }
-// function weaponSmithing(){
-//   print ("What type ")
-//   //Impaling Iron Armaments
-//   var iIA = 1
-//   //Reaving Iron Armaments
-//   var rIA = 1
-//   //Bulwark Crude Iron Armaments
-//   var bulCIA=2                              
-//   //Bruising Crude Iron Armametns
-//   var bruCIA = 1                           
-// }
-
-// function hunt() {
-//   print("What are you hunting?")
-//   display('rabits', 'turkey', 'elk', 'bear', "lynx", "wolves")
-//   var selected = 0//whatever was clicked when there was stuff displayed
-//   print("How many do you need")
-//   display(1, 3, 10, 15, 25)
-//   dsiplay('custom amount')//display custom button under card options
-//   var amount = 0//whatever the user selected
-//   return (selected, amount);
-// }
-
-
-
   //Impaling Iron Armaments
   var iIA = 0
   //Reaving Iron Armaments
@@ -237,6 +51,9 @@
   
      
   
+
+  var total = {"Rawhide": 25, "LodeStone Brick": 90, "Timber": 90, "Infused Silk": 25, "Linen": 30};
+
   
   //------------------
   //COST LOGIC
@@ -247,62 +64,75 @@
   var eTRations = 15
   var lRations = 0
   var tRations = 0
+
+
   //---------------
-  var silk = 0
-  var sateen = 0
   var linen = 0 + (RugIA*10) + (hIA*10) + (tIA*5) + (impIA*14)
-  
+  var sateen = 0
+  var silk = 0
+  var infSilk = 0
   //---------------
-  //-----------------
-  var iIngot = 140 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10) + (cleaveIA*7) + (tIA * 10) + (bIA *15) + (impIA*13) + (bulIA*5)
-  //--------------------
-  var lLeather = 50 
-  var rLeather = -98
   var cLeather = 0 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5) + (cleaveIA*10) + (tIA * 5) + (bIA*5) + (impIA*13) + (bulIA*5)
-  //------------------
-  //------------------
-  var lumber = 0
-  var timber = 17 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12) + (cleaveIA * 8) + (bIA*5) + (bulIA*10)
-  //------------
+  var rLeather = 0
+  var lLeather = 0 
+  var infLeather = 0
+  //-----------------
   var sBlock = 0
-  var sBrick = 20
-  ///------------
-  var wLBait = 0  // VVV
-  var nCBait = 0  // VVV
-  //------------------------
-  // common mana potion
-  var cMPot = 0
-  // weak mana potion
-  var wMPot = 0
-  //common regeneration potion
-  var cRPot = 0
-  //Strong Health Potion
-  var sHPot = 0
-  //strong Mana Potion
-  var sMPot = 0
-  //Powerful Regeneration Potion
-  var pRPot = 0
-  //Common Health Potion
-  var cHPot = 0
-  //------------------------
-  
+  var sBrick = 0
+  var lSBrick = 0
+  var oVStone = 0
+  //--------------------
+  var iIngot = 0 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10) + (cleaveIA*7) + (tIA * 10) + (bIA *15) + (impIA*13) + (bulIA*5)
+  var sIngot = 0
+  var sMIngot = 0
+  var oIngot = 0
+  //------------------
+
+  var timber = 0 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12) + (cleaveIA * 8) + (bIA*5) + (bulIA*10)
+  var lumber = 0
+  var wPlanks = 0
+  var iWPlanks = 0 
   //--------------BASE---------------
+  var gWood = 0 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40) + (iCIA*14) + (gCIA*30)
+  var agedWood = 0
+  var rawHide = 0 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (sCIA*15) + (impcIA*12)
   var fiber = 0 + (sOHCIA * 15) + (sOTCIA * 12) + (sCIA*8) + (impcIA*26)
-  var rawHide = 150 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) +
-                (sCIA*15) + (impcIA*12)
+  var flint = 0
+  var oil = 0
+  var water = 0
+  var feathers = 0
+
+
+
   var stone = 0
-  var gWood = 650 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40) + (iCIA*14) + (gCIA*30)
-  var agedWood = 80
   var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + 
                   (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (impcIA*12) +
                   (sCIA*7)
-  var water = 0
-  var feathers = 0
-  var oil = 0
-  var flint = 85
+
+
   var t1RF = (0 * eLRations) + (1 * lRations)
   var t2RF = 0 * eTRations
   var rF = 0 * eTRations
+
+   ///------------
+   var wLBait = 0  // VVV
+   var nCBait = 0  // VVV
+   //------------------------
+   // common mana potion
+   var cMPot = 0
+   // weak mana potion
+   var wMPot = 0
+   //common regeneration potion
+   var cRPot = 0
+   //Strong Health Potion
+   var sHPot = 0
+   //strong Mana Potion
+   var sMPot = 0
+   //Powerful Regeneration Potion
+   var pRPot = 0
+   //Common Health Potion
+   var cHPot = 0
+   //------------------------
   
   //calcs--------------------
   var silk_c = silk

@@ -6,6 +6,7 @@ import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
 import Calc from './components/Calc'
+import Result from './components/Result'
 import axios from 'axios'
 
 
@@ -183,7 +184,7 @@ function App() {
 
     < Route path = '/calc' exact render ={(props) => (
       <>
-        Calcuate all the things
+        <Result quests = {tasks}/>
       </>
         )}/>
 

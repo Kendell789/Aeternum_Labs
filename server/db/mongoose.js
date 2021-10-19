@@ -1,8 +1,9 @@
+require('dotenv').config();
 
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/Aeternum_DB',
+mongoose.connect(process.env.MONGO_URL,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true

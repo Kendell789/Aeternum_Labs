@@ -18,7 +18,7 @@ const Header = ({ title, onPush }) => {
             <Button text = 'FisherFolk Needed'onPush = {onPush}/>
             <Button text = 'Alchemists Needed'onPush = {onPush}/>
             <Button text = 'ArmorSmithing'onPush = {onPush}/>
-            <Button text = 'WeaponSmithing'onPush = {onPush}/>
+            <Button text = 'Weaponsmithing'onPush = {onPush}/>
             <Button text = 'Hunt'onPush = {onPush}/>
             
             

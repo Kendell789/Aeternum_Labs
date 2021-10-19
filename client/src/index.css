@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-  max-width: 63%;
+  max-width: 77%;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
@@ -58,6 +58,28 @@ body {
 
 .btn:hover{
     color: #d5d5d5;
+}
+
+.btn-calculate{
+  width: 40%;
+  display: inline-block;
+  background: #FFF1CE;
+  color: #272624;
+  border: none;
+  padding: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: inherit;
+
+
+}
+
+.btn-calculate:hover{
+  color: #ffb10f;
 }
 
 .card{
@@ -173,6 +195,7 @@ body {
 
 
 }
+
 
 
 
