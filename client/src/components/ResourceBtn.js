@@ -5,13 +5,13 @@ const ResourceBtn = ({resource, onToggleR,index}) => {
 
         <div  className={`cover ${resource.selected ? 'selectedCover' : ''}`}  >
             
-        <div onClick = {() => onToggleR(index,resource._id)
+        <button onClick = {() => onToggleR(index,resource._id)
 }
             className = 'card'
             >
             {resource.resourceType}
 
-        </div>
+        </button>
         </div>
     )
 }

@@ -5,13 +5,13 @@ const AmountBtn = ({amount, onToggleA,index}) => {
 
         <div  className={`cover ${amount.selected ? 'selectedCover' : ''}`}  >
             
-        <div onClick = {() => onToggleA(index,amount._id)}
+        <button onClick = {() => onToggleA(index,amount._id)}
             className = 'card'
             >
             
             {amount.val}
 
-        </div>
+        </button>
         </div>
     )
 }

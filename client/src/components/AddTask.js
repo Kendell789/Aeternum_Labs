@@ -56,7 +56,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
             <div className='form-control'>
 
             <label> How Much?  </label>
-
+                    
                 { displayAmount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA}/> ) }
 
 

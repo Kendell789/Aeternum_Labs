@@ -50,9 +50,7 @@
   
   
      
-  
 
-  var total = {"Rawhide": 25, "LodeStone Brick": 90, "Timber": 90, "Infused Silk": 25, "Linen": 30};
 
   
   //------------------
@@ -66,37 +64,42 @@
   var tRations = 0
 
 
-  //---------------
+  //------fiber---------
   var linen = 0 + (RugIA*10) + (hIA*10) + (tIA*5) + (impIA*14)
   var sateen = 0
   var silk = 0
-  var infSilk = 0
-  //---------------
+  var infSilk = 0 
+  //-------rawhide--------
   var cLeather = 0 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5) + (cleaveIA*10) + (tIA * 5) + (bIA*5) + (impIA*13) + (bulIA*5)
   var rLeather = 0
   var lLeather = 0 
   var infLeather = 0
-  //-----------------
+  //-------stone----------
   var sBlock = 0
   var sBrick = 0
   var lSBrick = 0
   var oVStone = 0
-  //--------------------
+  //---------iron ore-----------
   var iIngot = 0 + (reavIA * 9) + (pIA * 6) + (iIA * 4) + (cIA * 5) + (RugIA*5) + (hIA*10) + (cleaveIA*7) + (tIA * 10) + (bIA *15) + (impIA*13) + (bulIA*5)
   var sIngot = 0
   var sMIngot = 0
   var oIngot = 0
-  //------------------
+  //--------Green Wood----------
 
   var timber = 0 + (reavIA * 7) + (pIA * 7) + (iIA * 4) + (cIA * 12) + (cleaveIA * 8) + (bIA*5) + (bulIA*10)
   var lumber = 0
   var wPlanks = 0
   var iWPlanks = 0 
   //--------------BASE---------------
-  var gWood = 0 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40) + (iCIA*14) + (gCIA*30)
-  var agedWood = 0
-  var rawHide = 0 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (sCIA*15) + (impcIA*12)
   var fiber = 0 + (sOHCIA * 15) + (sOTCIA * 12) + (sCIA*8) + (impcIA*26)
+  var rawHide = 0 + (sOHCIA * 15) + (bulCIA * 12) + (sOTCIA * 9) + (bruCIA * 10) + (reavCIA*25) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (sCIA*15) + (impcIA*12)
+  var stone = 0
+  var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (impcIA*12) +(sCIA*7)
+  var gWood = 0 + (bulCIA * 3) + (bruCIA * 20) + (reavCIA*15) + (cCIA*15) + (ranCIA*20) + (plunCIA*10) + (pillCIA*40) + (iCIA*14) + (gCIA*30)
+
+
+  
+  var agedWood = 0
   var flint = 0
   var oil = 0
   var water = 0
@@ -104,10 +107,6 @@
 
 
 
-  var stone = 0
-  var iOre = 0 + (sOHCIA * 20) + (bulCIA * 15) + (sOTCIA * 9) + (bruCIA * 20) + (reavCIA*50) + 
-                  (cCIA*20) + (ranCIA*10) + (plunCIA*10) + (pillCIA*25) + (iCIA*8) + (gCIA*30) + (impcIA*12) +
-                  (sCIA*7)
 
 
   var t1RF = (0 * eLRations) + (1 * lRations)
