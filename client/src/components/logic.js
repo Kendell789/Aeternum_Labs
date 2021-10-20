@@ -1,3 +1,5 @@
+  
+  
   //Impaling Iron Armaments
   var iIA = 0
   //Reaving Iron Armaments
@@ -69,6 +71,8 @@
   var sateen = 0
   var silk = 0
   var infSilk = 0 
+
+  
   //-------rawhide--------
   var cLeather = 0 + (reavIA * 24) + (pIA * 7) + (iIA * 12) + (cIA * 8) + (RugIA*5) + (hIA*5) + (cleaveIA*10) + (tIA * 5) + (bIA*5) + (impIA*13) + (bulIA*5)
   var rLeather = 0

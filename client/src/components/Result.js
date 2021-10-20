@@ -1,10 +1,11 @@
 import React from 'react'
 import './script';
+import {breakdown , fiber2Calc} from './LogicFunc.js';
 
 const Result = ({quests}) => {
     var Total = {};
-    var val = 312;
-    var baseVal = 1542;
+    var baseVal = 0;
+    var val = 0;
 
     quests.forEach(element => {
         if (element.resourceTypeReq in Total){
@@ -14,15 +15,7 @@ const Result = ({quests}) => {
         }
     });
 
-    const Mats = Object.keys(Total)
-
-
-    Mats.forEach(item =>{
-        console.log(item)
-        console.log(Total[item])
-    })
-
-
+    breakdown(Total)
 
     return (
       <>
@@ -36,16 +29,16 @@ const Result = ({quests}) => {
               <body className = "resource"> 
               <h1 className = "rhead">Resources needed</h1>
 
-                <section class="basic-grid">
+                <section className="basic-grid">
                 <div className= "dropdown active" data-dropdown>
                 <button className="result-card" data-dropdown-button>Fiber</button>
                 <div className= "dropdown-menu" style={{fontSize: "29px"}}>
-                      {baseVal} Rawhide <br></br>
+                      {fiber2Calc["Fibers"]} Fibers <br></br>
                       Craft into: <br></br>
-                      {val} Linen<br></br>
-                      {val} Sateen <br></br>
-                      {val} Silk <br></br>
-                      {val} Infused Silk <br></br>
+                      {fiber2Calc["Linen"]} Linen<br></br>
+                      {fiber2Calc["Sateen"]} Sateen <br></br>
+                      {fiber2Calc["Silk"]} Silk <br></br>
+                      {fiber2Calc["Infused Silk"]} Infused Silk <br></br>
                 </div>
                 </div>
                 <div className= "dropdown" data-dropdown>
@@ -105,8 +98,8 @@ const Result = ({quests}) => {
               <h1 className = "rhead">Unique needed</h1>
 
               <section class="basic-grid">
-              <button class="unique-card"> {val} Wirefiber</button>
-              <button class="unique-card"> {val} Silk Threads</button>
+              <button class="unique-card"> {fiber2Calc["wireFiber"]} Wirefiber</button>
+              <button class="unique-card"> {fiber2Calc["silkThreads"]} Silk Threads</button>
               <button class="unique-card"> {val} Iron Hide</button>
               <button class="unique-card"> {val} Thick Hide</button>
               <button class="unique-card"> {val} Loamy Lodestone</button>
@@ -135,9 +128,9 @@ const Result = ({quests}) => {
               <div className= "dropdown" data-dropdown>
               <button class="result-card" data-dropdown-button>Cloth Weave</button>
               <div className= "dropdown-menu">
-              {val} Crossweave <br></br>
-              {val} Silkweave <br></br>
-              {val} Wireweave <br></br>
+              {fiber2Calc["flux"]} Crossweave <br></br>
+              {fiber2Calc["flux"]} Silkweave <br></br>
+              {fiber2Calc["flux"]} Wireweave <br></br>
               </div>
               </div>
               <div className= "dropdown" data-dropdown>
