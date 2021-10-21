@@ -130,7 +130,7 @@ function App() {
     <Router>
     <>
 
-    <h1 style={{color:'#FFF1CE',margin: '30px'} }> Aeternum Labs</h1>
+    <h1 style={{color:'#FFF1CE',margin: '0px',paddingLeft: '10px', paddingTop: '10px'} }> Aeternum Labs</h1>
   
     <Route path = '/' exact render ={(props) => (
 

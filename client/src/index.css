@@ -36,12 +36,9 @@ body {
   max-width: 100%;
   margin-left: 30px ;
   margin-right: 30px ;
-  overflow: auto;
   max-height: 100%;
-  border: 1px solid #d5d5d5;
-  padding: 30px;
   border-radius: 5px;
-  height: 762px;
+  height: 765px;
 }
 
 .header {
@@ -232,6 +229,7 @@ body {
 
 }
 .rhead{
+  padding-top: 0;
   padding-bottom: 15px;
   color: #9e947e;
 }
@@ -330,11 +328,10 @@ footer {
 }
 .unique-card{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #353535;
-  font-size: 36px;
+  font-size: 35px;
   color: #fff;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   height: 100%;
@@ -342,12 +339,12 @@ footer {
   border-radius: 4px;
   transition: all 500ms;
   overflow: hidden;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
 }
+
 
 .unique-card:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
@@ -387,7 +384,7 @@ footer {
 
 .basic-grid {
   display: grid;
-  gap: 1rem;
+  gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
@@ -415,7 +412,17 @@ footer {
   transform: translateY(-10px);
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
+.highlight{
+  background: #353535;
+  color:#ffb10f;
 
+}
+
+.highlight-l{
+  background: #353535;
+  color:#fae2a7;
+
+}
 
 
 .dropdown.active > .result-card + .dropdown-menu{
@@ -434,4 +441,5 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+
 }
