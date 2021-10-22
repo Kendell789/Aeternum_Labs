@@ -351,13 +351,21 @@ footer {
   transform: translateY(-3px) scale(1.1);
 }
 
-.unique-card:focus{
-  color:green;
+
+.highlight{
+  background: #353535;
+  color:#ffb10f;
 }
+.unhighlight{
+  background: #353535;
+  color:#353535;
+}
+.highlight:focus{
+  background:green;
 
-
+}
 .result-card{
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -376,7 +384,12 @@ footer {
   background-repeat: no-repeat;
 
 }
+.unique-used{
+  background: #353535;
+  color: gray;
+  content: "Completed" !important;
 
+}
 .result-card:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-3px) scale(1.1);
@@ -412,11 +425,7 @@ footer {
   transform: translateY(-10px);
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
-.highlight{
-  background: #353535;
-  color:#ffb10f;
 
-}
 
 .highlight-l{
   background: #353535;

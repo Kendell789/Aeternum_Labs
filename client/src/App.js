@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import { BrowserRouter as Router,Route} from 'react-router-dom' 
+import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
@@ -13,6 +14,8 @@ import axios from 'axios'
 var selectedResourceId;
 var selectedAmountId;
 var selectedQuest;
+var Rready = false;
+var Aready = false;
 
 function App() {
 
@@ -111,6 +114,7 @@ function App() {
   //Toggle Selected Amount
   const toggleSelectedA = (id,_id) => {
     selectedAmountId = _id
+    console.log(id)
     amounts.map((amount, i) => {
       if(id === i){
         amount.selected = true;
@@ -121,23 +125,39 @@ function App() {
     })
   }
   
+
   //const Quest name
   const qName = (questName)=>{
     selectedQuest = questName
+  }
+
+  function TODO(){
+    alert("Will add this feature if people actually want it Message me on discord at Blissfulgamer#8030")
+}
+
+
+
+  const Rpressed = () =>{
+      Rready = true  
+  }
+  
+  const Apressed = () =>{
+      Aready = true
   }
   
   return (
     <Router>
     <>
+    <Link to="/" style={{ textDecoration: 'none' }}>
+    <h1 style={{color:'#FFF1CE',margin: '0px',paddingLeft: '10px', paddingTop: '10px'} }> Aeternum Labs </h1> 
+    </Link>
 
-    <h1 style={{color:'#FFF1CE',margin: '0px',paddingLeft: '10px', paddingTop: '10px'} }> Aeternum Labs</h1>
   
     <Route path = '/' exact render ={(props) => (
 
       <>
       <div className="container">
-
-      <Header onPush = {qName}
+      <Header onPush = {qName} TODO = {TODO}
                 />
 
       <Calc/>
@@ -166,6 +186,10 @@ function App() {
         onAdd = {createTask}
         onToggleR={toggleSelectedR}
         onToggleA={toggleSelectedA}
+        Rpressed={Rpressed}
+        Apressed={Apressed}
+        Rready={Rready}
+        Aready={Aready}
         />
     
 

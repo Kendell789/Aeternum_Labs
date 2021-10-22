@@ -1,16 +1,18 @@
 import ResourceBtn from "./ResourceBtn"
 import AmountBtn from "./AmountBtn"
-import { useLocation } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 
-const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
+const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest,Aready,Rready,Apressed,Rpressed  } ) => {
     
     const onSubmit = (e) => {
         e.preventDefault()
 
 
     }
+
+    const history = useHistory();
+
     var displayResource = resource.filter(resource => {
         return resource.quest === quest.text
       })
@@ -20,13 +22,14 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
       })
 
 
-
-    const history = useHistory();
-    
     const redirect = () => {
+        if (Rready === false){ alert ("Please select a RESOURCE and amount before Adding Quest")}
+        else if (Aready === false) {alert (" Please Select an AMOUNT and resource before adding Quest")}
+        else{ 
         onAdd()
         history.push('/', )
         history.go(0)
+        }
 
 
     } 
@@ -48,7 +51,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
                 <label > What type of resource do you need </label>
                 
 
-                   { displayResource.map((items,index) => <ResourceBtn key = {index} index = {index} resource = {items} onToggleR={onToggleR}/> ) }
+                   {displayResource.map((items,index) => <ResourceBtn id = 'ResourceBtn' key = {index} index = {index} resource = {items} onToggleR={onToggleR} Rpressed = {Rpressed}/> ) }
 
 
                 </div>
@@ -57,7 +60,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest } ) => {
 
             <label> How Much?  </label>
                     
-                { displayAmount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA}/> ) }
+                { displayAmount.map((items,index) => <AmountBtn key = {index} amount = {items} index = {index} onToggleA={onToggleA} Apressed = {Apressed} /> ) }
 
 
             </div>

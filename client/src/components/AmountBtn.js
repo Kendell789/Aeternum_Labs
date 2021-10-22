@@ -1,11 +1,15 @@
-const AmountBtn = ({amount, onToggleA,index}) => {
+const AmountBtn = ({amount, onToggleA,index,Apressed }) => {
 
+    function calls(){
+        onToggleA(index,amount._id)
+        Apressed()
+    }
 
     return( 
 
         <div  className={`cover ${amount.selected ? 'selectedCover' : ''}`}  >
             
-        <button onClick = {() => onToggleA(index,amount._id)}
+        <button onClick = {() => calls() }
             className = 'card'
             >
             
