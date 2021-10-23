@@ -22,7 +22,7 @@ const AddWA = ( {resource, onToggleR,onToggleA, onAdd, quest,Rready,Rpressed  } 
 
 
     const redirect = () => {
-        if (Rready === false){ alert ("Please select a RESOURCE and amount before Adding Quest")}
+        if (false === false){ alert ("Coming Soon...These quests will get added on the bottom but the logic to calculate there impact on total resource count has not been added yet")}
         onAdd()
         history.push('/', )
         // history.go(0)
