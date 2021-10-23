@@ -19,7 +19,8 @@ body {
   text-align: left;
   font-size: 120%;
   padding-left: 15px;
-
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .container {
@@ -27,6 +28,15 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
+  border: 1px solid #d5d5d5;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.WA-container {
+  max-width: 90%;
+  margin: 30px auto;
+  min-height: 700px;
   border: 1px solid #d5d5d5;
   padding: 30px;
   border-radius: 5px;
@@ -83,8 +93,6 @@ body {
   text-decoration: none;
   font-size: 24px;
   font-family: inherit;
-
-
 }
 
 .btn-calculate:hover{
@@ -115,12 +123,8 @@ body {
   color: #d5d5d5;
 }
 
-.card:focus{
-  color:green;
-}
-
-.cover{
-  display:inline-block;
+.Amount-cover{
+  display:inline-flex;
   place-items: center;
   position: relative;
   width: 255px;
@@ -133,8 +137,22 @@ body {
 
 }
 
-.selectedCover{
-  display: inline-flex;
+.Resource-cover{
+  display:inline-flex;
+  place-items: center;
+  position: relative;
+  width: 255px;
+  height: 80px;
+  border-radius: 1em;
+  background: linear-gradient(50deg, #2a5a3b,#1e4886);
+  overflow: hidden;
+  padding:5px;
+  margin: 5px;
+
+}
+
+.Amount-cover:focus{
+  display:inline-flex;
   place-items: center;
   position: relative;
   width: 255px;
@@ -144,6 +162,58 @@ body {
   overflow: hidden;
   padding:5px;
   margin: 5px;
+
+}
+
+.Resource-cover:focus{
+  display:inline-flex;
+  place-items: center;
+  position: relative;
+  width: 255px;
+  height: 80px;
+  border-radius: 1em;
+  background: linear-gradient(50deg, #00ff59,#02b3ff);
+  overflow: hidden;
+  padding:5px;
+  margin: 5px;
+
+}
+   
+.Amount-cover::before{
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 35px;
+  top: 0;
+  right: 35px;
+  transition: 1.9s;
+  background: linear-gradient(50deg, #00ff59,#02b3ff);
+  transform: rotate(-45deg) translate(0,-100px);
+}
+.Amount-cover:hover:before{
+  animation: cardEffect 1.9s;
+}
+
+.Resource-cover::before{
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 35px;
+  top: 0;
+  right: 35px;
+  transition: 1.9s;
+  background: linear-gradient(50deg, #00ff59,#02b3ff);
+  transform: rotate(-45deg) translate(0,-100px);
+}
+.Resource-cover:hover:before{
+  animation: cardEffect 1.9s;
+}
+
+@keyframes cardEffect {
+  100%{
+    transform:rotate(-45deg) translate(0,450px)
+  }
+  
 }
 
 
@@ -167,28 +237,6 @@ body {
    float: right;
    }
    
-.cover::before{
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 35px;
-  top: 0;
-  right: 35px;
-  transition: 1.9s;
-  background: linear-gradient(50deg, #00ff59,#02b3ff);
-  transform: rotate(-45deg) translate(0,-100px);
-}
-.cover:hover:before{
-  animation: cardEffect 1.9s;
-}
-
-@keyframes cardEffect {
-  100%{
-    transform:rotate(-45deg) translate(0,450px)
-  }
-  
-}
-
 .btn.selected {
   border-left: 5px solid green;
 }
@@ -323,8 +371,14 @@ footer {
 }
 
 
-#wrapper{
-  overflow:auto;
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 100px ;
+  border: 1px solid #d5d5d5;
+  height: 600px;
+
+
 }
 .unique-card{
   display: flex;
@@ -382,8 +436,62 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
+.WA-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  font-size: 24px;
+  text-align: center;
+  background: #ffb10f;
+  color: #272624;
+  border-radius: 4px;
+  transition: all 500ms;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.WAbtn{
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffb10f;
+  font-size: 24px;
+  color: #353535;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 99%;
+  width: 99%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.WAbtn:hover{
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.WAbtn:focus{
+  color: #353535;
+  background-color: #d5d5d5;
+  
+}
+
+
 .unique-used{
   background: #353535;
   color: gray;
@@ -391,6 +499,11 @@ footer {
 
 }
 .result-card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.WA-card:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-3px) scale(1.1);
 }
@@ -406,8 +519,20 @@ footer {
   color:#ffb10f;
 }
 
+
+
+
+
 .dropdown{
   position:relative;
+}
+
+.WA-dropdown{
+  position:relative;
+  padding-top: 20px;
+  padding-left: 15px;
+  margin-right: 30px;
+
 }
 
 .dropdown-menu{
@@ -416,6 +541,22 @@ footer {
   top: calc(100% + .25rem);
   background: #353535;
   padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 regba(0,0,0.1);
+  width: 100%;
+  font-size: 33px;
+  opacity: 0;
+  line-height: 175%;
+  transform: translateY(-10px);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.WA-dropdown-menu{
+  position:absolute;
+  left: 0;
+  top: calc(100% + .25rem);
+  padding: 12px;
+  padding-left: 35px;
   border-radius: .25rem;
   box-shadow: 0 2px 5px 0 regba(0,0,0.1);
   width: 100%;
@@ -439,6 +580,15 @@ footer {
   transform: translateY(0);
 }
 
+.WA-dropdown.active > .WA-card + .WA-dropdown-menu{
+  opacity: 1 ;
+  transform: translateY(0);
+
+}
+.WA-dropdown.active{
+  padding-top: 20px;
+  padding-left: 15px;
+}
 
 
 

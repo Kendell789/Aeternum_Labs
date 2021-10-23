@@ -21,14 +21,13 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest,Aready,R
         return quest.text === amount.quests
       })
 
-
     const redirect = () => {
         if (Rready === false){ alert ("Please select a RESOURCE and amount before Adding Quest")}
         else if (Aready === false) {alert (" Please Select an AMOUNT and resource before adding Quest")}
         else{ 
         onAdd()
         history.push('/', )
-        history.go(0)
+        // history.go(0)
         }
 
 
@@ -51,7 +50,7 @@ const AddTask = ( {resource, amount, onToggleR, onToggleA, onAdd, quest,Aready,R
                 <label > What type of resource do you need </label>
                 
 
-                   {displayResource.map((items,index) => <ResourceBtn id = 'ResourceBtn' key = {index} index = {index} resource = {items} onToggleR={onToggleR} Rpressed = {Rpressed}/> ) }
+                   {displayResource.map((items,index) => <ResourceBtn key = {index} index = {index} resource = {items} onToggleR={onToggleR} Rpressed = {Rpressed}/> ) }
 
 
                 </div>

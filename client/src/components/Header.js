@@ -17,7 +17,7 @@ const Header = ({ title, onPush, TODO}) => {
             <Button text = 'Harvesters Needed'onPush = {onPush}/>
             <Button text = 'Supplies Needed'onPush = {onPush}/>
             <Button text = 'Weaponsmithing'onPush = {onPush}/>
-            <Button text = 'ArmorSmithing'onPush = {onPush}/>
+            <Button text = 'Armorsmithing'onPush = {onPush}/>
             <button  className='btn' onClick = {TODO}> Cooks Needed </button>
             <button  className='btn' onClick = {TODO}> FisherFolk Needed </button>
             <button  className='btn' onClick = {TODO}> Alchemists Needed </button>

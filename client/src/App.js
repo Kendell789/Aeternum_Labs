@@ -8,12 +8,14 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Calc from './components/Calc'
 import Result from './components/Result'
+import AddWA from './components/AddWA'
 import axios from 'axios'
 
 
 var selectedResourceId;
 var selectedAmountId;
 var selectedQuest;
+var WAAmount;
 var Rready = false;
 var Aready = false;
 
@@ -22,11 +24,11 @@ function App() {
   
   //fetch tasks
   const FetchTasks = () =>{
-      useEffect(()=>{
-      axios.get('http://localhost:5000/quests')
-              .then(res => setTasks(res.data))
-              .catch(err => console.log(err))
-    }, []);
+    //   useEffect(()=>{
+    //   axios.get('http://localhost:5000/quests')
+    //           .then(res => setTasks(res.data))
+    //           .catch(err => console.log(err))
+    // }, []);
 
     }
 
@@ -48,11 +50,13 @@ function App() {
   }, []);
   }
 
-  FetchTasks()
   FetchMats()
   FetchAmt()
 
-  const [tasks,setTasks] = useState([])
+  const [tasks,setTasks] = useState([
+    
+  ])
+
   const [resources,setResources] = useState([])
   const [amounts,setAmounts] = useState([])
 
@@ -61,6 +65,8 @@ function App() {
 
   //create Task
   const createTask = () => {
+    var resAmount = null;
+
     var selectedAmount = amounts.filter(amount => {
       return amount._id === selectedAmountId
     })
@@ -68,16 +74,25 @@ function App() {
     var selectedResourceType = resources.filter(resource => {
       return resource._id === selectedResourceId
     })
-
+    if (selectedQuest.text === "Weaponsmithing"){
+      resAmount = WAAmount
+    }else if (selectedQuest.text === "Armorsmithing"){
+      resAmount = WAAmount
+    }else{
+    resAmount = selectedAmount[0].val
+    }
     const newQuest = {
      id : Math.floor(Math.random()*10000)+1,
      text : selectedQuest.text,
-     resourceAmountReq : selectedAmount[0].val,
+     resourceAmountReq : resAmount,
      resourceTypeReq : selectedResourceType[0].resourceType
     }
     console.log(newQuest)
-    axios.post('http://localhost:5000/quests',newQuest)
-    window.location.reload(true);
+
+    setTasks([...tasks, newQuest])
+
+    // axios.post('http://localhost:5000/quests',newQuest)
+    // window.location.reload(true);
 
   }
 
@@ -123,6 +138,10 @@ function App() {
       }
       setAmounts([...amounts.slice(0, i), amount])
     })
+  }
+  const setWAAmount = (set) =>{
+    WAAmount = set
+    console.log(WAAmount)
   }
   
 
@@ -186,6 +205,37 @@ function App() {
         onAdd = {createTask}
         onToggleR={toggleSelectedR}
         onToggleA={toggleSelectedA}
+        Rpressed={Rpressed}
+        Apressed={Apressed}
+        Rready={Rready}
+        Aready={Aready}
+        />
+    
+
+        </div>
+        
+        <div id="under">
+        {tasks.length > 0 ? 
+        <Tasks tasks = {tasks} 
+        onDelete = {deleteTask}/> 
+        : 'No Quest selected'}
+        </div>
+        
+        
+        </>
+        )}/>
+
+      <Route path = '/addwa' exact render ={(props) => (
+      <>
+      <div className = 'WA-container'>
+      
+      <AddWA 
+        resource = {resources}
+        amount = {amounts}
+        quest={selectedQuest}
+        onAdd = {createTask}
+        onToggleR={toggleSelectedR}
+        onToggleA={setWAAmount}
         Rpressed={Rpressed}
         Apressed={Apressed}
         Rready={Rready}

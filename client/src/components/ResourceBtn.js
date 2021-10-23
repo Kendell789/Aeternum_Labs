@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const ResourceBtn = ({resource, onToggleR,index, Rpressed }) => {
 
     function calls(){
@@ -7,15 +9,15 @@ const ResourceBtn = ({resource, onToggleR,index, Rpressed }) => {
 
     return( 
 
-        <div  className={`cover ${resource.selected ? 'selectedCover' : ''}`}  >
+        <button className='Resource-cover' >
             
-        <button onClick = {() =>  calls()}
+        <div onClick = {() =>  calls()}
             className = 'card'
             >
             {resource.resourceType}
 
-        </button>
         </div>
+        </button>
     )
 }
 

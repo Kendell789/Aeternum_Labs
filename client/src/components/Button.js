@@ -7,8 +7,14 @@ const Button = ({color,text,onPush}) => {
 
     const goToReceiver = () => {
         onPush({text})
-        history.push("/add",{
-                        name: text});
+
+        if(text === "Armorsmithing"){
+        history.push("/addwa");
+        }else if (text === "Weaponsmithing"){
+        history.push("/addwa");
+        }else{
+        history.push("/add");
+        }
     }  
 
     return( 
